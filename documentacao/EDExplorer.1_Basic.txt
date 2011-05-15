@@ -1,0 +1,119 @@
+EDExplorer Basic
+
+Descricao:
+	Implementacao das estruturas abstratas e testes.
+
+Sistemas:
+	Windows e Linux
+
+========================================================
+Tarefas:
+
+Para cada tarefa de implementaÃ§Ã£o:
+1. implementar
+2. criar teste em main.cpp
+3. comentar a implementaÃ§Ã£o e o teste
+4. adicionar ao relatorio
+
+Lista:
+01 - estrutura minima do programa (criar arquivos)
+  criar arquivos vazios para as classes:
+    ELEMENTO.cpp e .h
+    NO.cpp e .h
+    FILA.cpp e .h
+    LISTA_SIMPLES.cpp e .h
+    LISTA_AVANCADA.cpp e .h
+    ARVORE.cpp e .h
+  criar arquivo main.cpp com espacos para as partes do codigo:
+    Descricao do programa (sobre, nossos nomes, versao...)
+    Parte 1: testes com ELEMENTO
+    Parte 2: testes com NO
+    Parte 3: testes com FILA
+    Parte 4: testes com LISTA_SIMPLES
+    Parte 5: testes com LISTA_AVANCADA
+    Parte 6: testes com ARVORE
+    
+02.0 - estrutura minima do relatorio
+  ?
+
+02.1 - finalizar o relatorio
+  rever gramatica e vocabulario
+  rever formatacao
+
+03.0 - criar a classe ELEMENTO:
+  implementar:
+    construtor e destrutor
+    -int ELEMENTO::valor
+    get e set para valor
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+03.1 - outros metodos da classe ELEMENTO:
+  implementar:
+    construtor de copia
+    sobrecarga de =
+    sobrecarga da impressao ( cout << ELEMENTO ) [codigo nos arquivos ELEMENTO.cpp e .h]
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+04.0 - criar a classe NO:
+  implementar:
+    construtor e destrutor
+    -ELEMENTO NO::elemento
+    get e set elemento
+    -NO * NO::esquerda
+    get e set para esquerda
+    -NO * NO::direita
+    get e set para direita
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+  
+05.0 - criar a classe FILA:
+  descricao:
+    alocacao estatica e sequencial
+  implementar:
+    construtor e destrutor
+    -unsigned int FILA::tamanhomaximo
+    get tamanhomaximo
+    -unsigned int FILA::tamanhoatual
+    get tamanhoatual
+    -ELEMENTO FILA::fila[tamanho]
+    get e set da fila // vide nomes adequados, tipo pull e push
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+06.0 - criar a classe LISTA_SIMPLES:
+  descricao:
+    alocacao ? e ?
+  implementar:
+    construtor e destrutor
+    ...
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+07.0 - criar a classe LISTA_AVANCADA:
+  descricao:
+    alocacao ? e ?
+  implementar:
+    construtor e destrutor
+    ...
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+08.0 - criar a classe ARVORE:
+  descricao:
+    alocacao ? e ?
+  implementar:
+    construtor e destrutor
+    ...
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+  
