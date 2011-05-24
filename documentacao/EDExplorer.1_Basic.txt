@@ -9,17 +9,18 @@ Sistemas:
 ========================================================
 Tarefas:
 
-Para cada tarefa de implementaÃ§Ã£o:
+Para cada tarefa de implementacao:
 1. implementar
 2. criar teste em main.cpp
-3. comentar a implementaÃ§Ã£o e o teste
+3. comentar a implementacao e o teste
 4. adicionar ao relatorio
 
 Lista:
 01 - estrutura minima do programa (criar arquivos)
   criar arquivos vazios para as classes:
     ELEMENTO.cpp e .h
-    NO.cpp e .h
+    NO1.cpp e .h
+    NO2.cpp e .h
     FILA.cpp e .h
     LISTA_SIMPLES.cpp e .h
     LISTA_AVANCADA.cpp e .h
@@ -27,86 +28,202 @@ Lista:
   criar arquivo main.cpp com espacos para as partes do codigo:
     Descricao do programa (sobre, nossos nomes, versao...)
     Parte 1: testes com ELEMENTO
-    Parte 2: testes com NO
-    Parte 3: testes com FILA
-    Parte 4: testes com LISTA_SIMPLES
-    Parte 5: testes com LISTA_AVANCADA
-    Parte 6: testes com ARVORE
+    Parte 2: testes com NO1
+    Parte 3: testes com NO2
+    Parte 4: testes com FILA
+    Parte 5: testes com LISTA_SIMPLES
+    Parte 6: testes com LISTA_AVANCADA
+    Parte 7: testes com ARVORE
     
 02.0 - estrutura minima do relatorio
-  ?
+  capa
+  sumario
+  introducao
+  estrategia
+    diagrama
+  printscreen
 
-02.1 - finalizar o relatorio
+02.1 - relatorio: introducao
+
+02.2 - relatorio: estrategia: diagrama
+
+02.3 - relatorio: printscreen
+  printscreens da execucao dos testes em windows e linux
+
+02.99 - finalizar o relatorio
   rever gramatica e vocabulario
   rever formatacao
 
 03.0 - criar a classe ELEMENTO:
   implementar:
-    construtor e destrutor
-    -int ELEMENTO::valor
-    get e set para valor
+    +ELEMENTO::ELEMENTO() // construtor com valor padrao
+    +ELEMENTO::ELEMENTO( int valor ) // construtor recebe valor
+    +ELEMENTO::~ELEMENTO() // destrutor vazio
+    -int ELEMENTO::valor // conteudo do elemento
+    +int ELEMENTO::getValor()
+    +void ELEMENTO::setValor( int )
   testar em main.cpp
   comentar implementacoes e testes
   adicionar ao relatorio
 
 03.1 - outros metodos da classe ELEMENTO:
   implementar:
-    construtor de copia
-    sobrecarga de =
+    +ELEMENTO::ELEMENTO( ELEMENTO ) // ? necessario ?
+    +ELEMENTO ELEMENTO::operator=( ELEMENTO )
     sobrecarga da impressao ( cout << ELEMENTO ) [codigo nos arquivos ELEMENTO.cpp e .h]
   testar em main.cpp
   comentar implementacoes e testes
   adicionar ao relatorio
 
-04.0 - criar a classe NO:
+04.0 - criar a classe NO1:
+  descricao:
+    No para encadeamento em uma unica direcao
   implementar:
-    construtor e destrutor
-    -ELEMENTO NO::elemento
-    get e set elemento
-    -NO * NO::esquerda
-    get e set para esquerda
-    -NO * NO::direita
-    get e set para direita
+    +NO1::NO1() // cria no com valor padrao
+    +NO1::NO1( ELEMENTO elemento )
+    +NO1::~NO1() // vazio
+    -ELEMENTO NO1::elemento // conteudo do no
+    +ELEMENTO NO1::getElemento()
+    +void NO1::setElemento( ELEMENTO )
+    -NO1 * NO1::proximo
+    +NO1 * NO1::getProximo()
+    +void NO1::setProximo(NO1 *)
   testar em main.cpp
   comentar implementacoes e testes
   adicionar ao relatorio
-  
-05.0 - criar a classe FILA:
+
+05.0 - criar a classe NO2:
+  descricao:
+    No para encadeamento duplo
+  implementar:
+    +NO2::NO2() // cria no com valor padrao
+    +NO2::NO2( ELEMENTO elemento )
+    +NO2::~NO2() // vazio
+    -ELEMENTO NO2::elemento
+    +ELEMENTO NO2::getElemento()
+    +void NO2::setElemento( ELEMENTO )
+    -NO2 * NO2::esquerda
+    +NO2 * NO2::getEsquerda()
+    +void * NO2::setEsquerda( NO2 * )
+    -NO2 * NO2::direita
+    +NO2 * NO2::getDireita()
+    +void NO2::setDireita( NO2 * )
+  testar em main.cpp
+  comentar implemetacoes e testes
+  adicionar ao relatorio
+
+06.0 - criar a classe FILA:
   descricao:
     alocacao estatica e sequencial
   implementar:
-    construtor e destrutor
-    -unsigned int FILA::tamanhomaximo
-    get tamanhomaximo
-    -unsigned int FILA::tamanhoatual
-    get tamanhoatual
-    -ELEMENTO FILA::fila[tamanho]
-    get e set da fila // vide nomes adequados, tipo pull e push
+    +FILA::FILA() // cria fila com tamanho padrao
+    +FILA::FILA( int ) // cria fila com tamanho especificado
+    +FILA::~FILA() // vazio
+    -unsigned int FILA::tamanhoMaximo
+    +unsigned int FILA::getTamanhoMaximo()
+    -unsigned int FILA::tamanhoAtual
+    +unsigned int FILA::getTamanhoAtual()
+    -ELEMENTO FILA::fila[tamanhoMaximo]
   testar em main.cpp
   comentar implementacoes e testes
   adicionar ao relatorio
 
-06.0 - criar a classe LISTA_SIMPLES:
-  descricao:
-    alocacao ? e ?
+06.1 - FILA: adicinar e retirar
+  observacao:
+    vide nomes adequados para estas funcoes
   implementar:
-    construtor e destrutor
-    ...
+    +void FILA::adicionar( ELEMENTO, bool erro )
+    +ELEMENTO FILA::retirar( bool erro )
   testar em main.cpp
   comentar implementacoes e testes
   adicionar ao relatorio
 
-07.0 - criar a classe LISTA_AVANCADA:
-  descricao:
-    alocacao ? e ?
+06.2 - FILA: vazia e cheia
   implementar:
-    construtor e destrutor
-    ...
+    +bool FILA::vazia()
+    +bool FILA::cheia()
   testar em main.cpp
   comentar implementacoes e testes
   adicionar ao relatorio
 
-08.0 - criar a classe ARVORE:
+07.0 - criar a classe LISTA_SIMPLES:
+  descricao:
+    alocacao dinamica e nao sequencial
+    unidirecionalmente encadeada
+  implementar:
+    +LISTA_SIMPLES::LISTA_SIMPLES()
+    +LISTA_SIMPLES::~LISTA_SIMPLES() // deletes
+    -unsigned int LISTA_SIMPLES::tamanhoAtual
+    +unsigned int LISTA_SIMPLES::getTamanhoAtual()
+    +bool LISTA_SIMPLES::getVazia()
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+07.1 - LISTA_SIMPLES: adicionar, retirar
+  implementar:
+    +void LISTA_SIMPLES::adicionar( ELEMENTO, bool erro ) // por no final da lista
+    +void LISTA_SIMPLES::retirar( ELEMENTO, bool erro) // retirar o primeiro encontrado ou avisar erro
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+07.2 - LISTA_SIMPLES: estaNaLista e busca
+  implementar:
+    +bool LISTA_SIMPLES::estaNaLista( ELEMENTO )
+    +void LISTA_SIMPLES::busca( ELEMENTO, NO1 * )
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+07.3 - LISTA_SIMPLES: imprimir lista
+  implementar:
+    sobrecarregar impressao da lista [codigo nos arquivos LISTA_SIMPLES.cpp e .h]
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+08.0 - criar a classe LISTA_AVANCADA:
+  descricao:
+    alocacao dinamica e nao sequencial
+    circular, header
+    encadeamento duplo
+  implementar:
+    +LISTA_AVANCADA::LISTA_AVANCADA()
+    +LISTA_AVANCADA::~LISTA_AVANCADA() // deletes
+    -unsigned int LISTA_AVANCADA::tamanhoAtual
+    +unsigned int LISTA_AVANCADA::getTamanhoAtual()
+    +bool LISTA_AVANCADA::vazia()
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+08.1 - LISTA_AVANCADA: adicionar e retirar
+  implementacao:
+    +void LISTA_AVANCADA::adicionar( ELEMENTO, bool erro ) // por no final da lista
+    +void LISTA_AVANCADA::retirar( ELEMENTO, bool erro ) // remove o primeiro encontrado
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+08.2 - LISTA_AVANCADA: estaNaLista, retirar
+  implementacao:
+    +bool LISTA_AVANCADA::estaNaLista( ELEMENTO, NO2 * )
+    +ELEMENTO LISTA_AVANCADA::info( NO2 *, bool erro )
+    +void LISTA_AVANCADA::retirar( NO2 *, bool erro ) // remove o no pedido
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+08.3 - LISTA_AVANCADA: insereADireita e insereAEsquerda
+  implementacao:
+    +bool LISTA_AVANCADA::insereADireita( ELEMENTO, NO2 * )
+    +bool LISTA_AVANCADA::insereAEsquerda( ELEMENTO, NO2 * )
+  testar em main.cpp
+  comentar implementacoes e testes
+  adicionar ao relatorio
+
+09.0 - criar a classe ARVORE:
   descricao:
     alocacao ? e ?
   implementar:
