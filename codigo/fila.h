@@ -1,18 +1,23 @@
 #ifndef FILA_H
 #define FILA_H
 #include "elemento.h"
-
+#include "no1.h"
+using namespace std;
 class fila
 {
     public:
         fila();
         virtual ~fila();
+
         void entra(elemento&);
-        elemento& sai();
+        void sai(elemento & ele, bool & ok);
+        //bool verificaVazio();
+        //bool verificaCheia();
+        //Cria fila e o constructor
+        no1 * procuraUltimo();
     protected:
     private:
-        elemento filaElem[];
-        int tamanho;
+            no1 *ptrPrimeiro;
 };
 
 #endif // FILA_H

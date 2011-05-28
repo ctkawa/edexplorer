@@ -40,6 +40,27 @@ int main()
     cout << meuno2.info << endl;
     cout << meuno2.dir->info << endl;
 
+/*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
+
+    cout << endl << "Testing fila!" << endl;
+    elemento cambada[10], *ptrEle;
+    bool *ptrBool;
+    cambada[0] = 3; cambada[1] = 13;
+    cambada[2] = 2; cambada[3] = 6;
+    cambada[4] = 4; cambada[5] = 8;
+    cambada[6] = 7; cambada[7] = 5;
+    cambada[8] = 1; cambada[9] = 9;
+    fila minhafila;
+    cout << "entrando: " << cambada[3] << endl; minhafila.entra(cambada[3]);
+    cout << "entrando: " << cambada[2] << endl; minhafila.entra(cambada[2]);
+    cout << "entrando: " << cambada[1] << endl; minhafila.entra(cambada[1]);
+    minhafila.sai(*ptrEle,*ptrBool);
+    if (*ptrBool) cout << "saindo: " << *ptrEle;
+    minhafila.sai(*ptrEle,*ptrBool);
+    if (*ptrBool) cout << "saindo: " << *ptrEle;
+    minhafila.sai(*ptrEle,*ptrBool);
+    if (*ptrBool) cout << "saindo: " << *ptrEle;
+
 
 /*
     cout << "aqui deve ser info de [1]" << &noPtr.info.conteudo << endl;

@@ -2,7 +2,7 @@
 
 no1::no1()
 {
-    //ctor
+    next = NULL;
 }
 
 no1::~no1()

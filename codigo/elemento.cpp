@@ -2,7 +2,7 @@
 
 elemento::elemento()
 {
-    //ctor
+    conteudo = 0;
 }
 
 elemento::~elemento()
