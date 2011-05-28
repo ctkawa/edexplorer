@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    cout << "Testing!" << endl;
+    cout << "Testing no1!" << endl;
 
     no1 meuno[3], *noPtr;
     meuno[0].info = 10;
@@ -24,11 +24,27 @@ int main()
 
     noPtr = meuno[0].next;
 
-    cout << noPtr->info.conteudo << endl;
+    cout << noPtr->info<< endl;
+    noPtr->info = 77;
+    cout << noPtr->info<< endl;
+
+    meuno[0].next->next = &meuno[0];
+
+/*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
+
+    cout << endl << "Testing no2!" << endl;
+    no2 meuno2;
+    meuno2.info = 720;
+    meuno2.dir = &meuno2;
+    meuno2.esq = &meuno2;
+    cout << meuno2.info << endl;
+    cout << meuno2.dir->info << endl;
+
 
 /*
     cout << "aqui deve ser info de [1]" << &noPtr.info.conteudo << endl;
-    cout << "aqui deve ser info de [2]" << meuno[0].next.next.info.conteudo << endl;*/
+    cout << "aqui deve ser info de [2]" << meuno[0].next.next.info.conteudo << endl;
+*/
 
 
     return 0;

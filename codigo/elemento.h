@@ -11,7 +11,7 @@ class elemento
     public:
         elemento();
         virtual ~elemento();
-        int conteudo;
+
         elemento& operator=(int esq){
             conteudo = esq;
             return *this;
@@ -22,7 +22,7 @@ class elemento
         }
     protected:
     private:
-
+        int conteudo;
 };
 
 #endif // ELEMENTO_H
