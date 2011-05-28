@@ -23,8 +23,8 @@ int main()
     cout << "meuno[2].info = " << meuno[2].info.conteudo << " / at = " << meuno[2].next  << endl;
 
     noPtr = meuno[0].next;
-    cout << *noPtr.info.conteudo << endl;
-//    cout << noPtr.info.conteudo << endl;
+
+    cout << noPtr->info.conteudo << endl;
 
 /*
     cout << "aqui deve ser info de [1]" << &noPtr.info.conteudo << endl;

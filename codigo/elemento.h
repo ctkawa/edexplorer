@@ -12,6 +12,7 @@ class elemento
             conteudo = esq;
             return *this;
         };
+
     protected:
     private:
 
