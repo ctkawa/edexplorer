@@ -18,9 +18,9 @@ int main()
     meuno[1].next = &meuno[2];
     meuno[2].next = &meuno[0];
 
-    cout << "meuno[0].info = " << meuno[0].info.conteudo << " / at = " << meuno[0].next << endl;
-    cout << "meuno[1].info = " << meuno[1].info.conteudo << " / at = " << meuno[1].next  << endl;
-    cout << "meuno[2].info = " << meuno[2].info.conteudo << " / at = " << meuno[2].next  << endl;
+    cout << "meuno[0].info = " << meuno[0].info << " / at = " << meuno[0].next << endl;
+    cout << "meuno[1].info = " << meuno[1].info << " / at = " << meuno[1].next  << endl;
+    cout << "meuno[2].info = " << meuno[2].info << " / at = " << meuno[2].next  << endl;
 
     noPtr = meuno[0].next;
 
