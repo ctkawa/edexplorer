@@ -58,19 +58,13 @@ int main()
     cout << "entrando: " << cambada[2] << endl; minhafila.entra(cambada[2]);
     cout << "entrando: " << cambada[1] << endl; minhafila.entra(cambada[1]);
     cout << "Elementos inseridos!!!   Agora irao sair:" << endl;
-    minhafila.sai(*ptrEle,*ptrBool);
-    if (*ptrBool) cout << "saindo: " << *ptrEle;
-    minhafila.sai(*ptrEle,*ptrBool);
-    if (*ptrBool) cout << "saindo: " << *ptrEle;
-    minhafila.sai(*ptrEle,*ptrBool);
-    if (*ptrBool) cout << "saindo: " << *ptrEle;
-
-
-/*
-    cout << "aqui deve ser info de [1]" << &noPtr.info.conteudo << endl;
-    cout << "aqui deve ser info de [2]" << meuno[0].next.next.info.conteudo << endl;
-*/
-
+    minhafila.sai(ptrEle,*ptrBool);
+    if (*ptrBool) cout << "saindo: " << *ptrEle << endl;
+    minhafila.sai(ptrEle,*ptrBool);
+    if (*ptrBool) cout << "saindo: " << *ptrEle << endl;
+    minhafila.sai(ptrEle,*ptrBool);
+    if (*ptrBool) cout << "saindo: " << *ptrEle << endl;
+    cout << "Elementos Saíram!!" << endl;
 
     return 0;
 }

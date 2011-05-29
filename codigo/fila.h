@@ -10,7 +10,7 @@ class fila
         virtual ~fila();
 
         void entra(elemento&);
-        void sai(elemento & ele, bool & ok);
+        void sai(elemento *(&ele), bool & ok);
         //bool verificaVazio();
         //bool verificaCheia();
         //Cria fila e o constructor

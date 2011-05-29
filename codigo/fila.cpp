@@ -24,18 +24,15 @@ void fila::entra(elemento &ele){
     else{
         ptrPrimeiro = novoNo;
     }
-
-
-
     return;
 }
 
-void fila::sai(elemento & ele, bool & ok){
+void fila::sai(elemento *(&ele), bool & ok){
     no1 *noPtr;
     if (ptrPrimeiro==NULL){
         return;
     }
-    ele = ptrPrimeiro->info;
+    *ele = ptrPrimeiro->info;
     noPtr = ptrPrimeiro->next;
     delete ptrPrimeiro;
     ptrPrimeiro = noPtr;
