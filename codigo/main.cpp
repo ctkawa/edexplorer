@@ -30,6 +30,9 @@ int main()
 
     meuno[0].next->next = &meuno[0];
 
+    noPtr->next = noPtr;
+    cout << noPtr << endl;
+    cout << noPtr->next << endl;
 /*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
 
     cout << endl << "Testing no2!" << endl;

@@ -14,7 +14,7 @@ class fila
         //bool verificaVazio();
         //bool verificaCheia();
         //Cria fila e o constructor
-        no1 * procuraUltimo();
+        void procuraUltimo(no1* noPtr, bool & ok);
     protected:
     private:
             no1 *ptrPrimeiro;

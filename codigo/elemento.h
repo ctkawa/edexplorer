@@ -2,7 +2,7 @@
 #define ELEMENTO_H
 #include <iostream>
 /*
-    Sobrecarregar operacoes <<
+    Sobrecarregar operacoes ==,...
 */
 
 using namespace std;

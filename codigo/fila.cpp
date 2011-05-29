@@ -14,10 +14,20 @@ fila::~fila()
 void fila::entra(elemento &ele){
     no1 *noPtr;
     no1 *novoNo;
+    bool ok;
     novoNo = new no1();
     novoNo->info = ele;
-    noPtr = procuraUltimo();
-    noPtr->next = novoNo;
+    procuraUltimo(noPtr, ok);
+                    cout << "Returned Last:" << noPtr << endl;
+    if (ok){
+                    cout << "OLD, inserting:" << novoNo << " to " << noPtr->next << endl;
+        noPtr->next = novoNo;
+                    cout << "OLD2" << endl;
+    }
+    else{
+                    cout << "NEW" << endl;
+        ptrPrimeiro = novoNo;
+    }
 
 
 
@@ -37,18 +47,18 @@ void fila::sai(elemento & ele, bool & ok){
 
 }
 
-no1 * fila::procuraUltimo(){
-    no1 *noPtr;
-    noPtr = ptrPrimeiro;
-
-    if (noPtr = NULL){
-        return ptrPrimeiro;
+void fila::procuraUltimo(no1* noPtr, bool & ok){
+    if (ptrPrimeiro == NULL){
+        ok = false;
+        return;
     }
-cout << "here@@@@@@@@@@@@!!" << endl;
-cout << noPtr->next << endl;
+    noPtr = ptrPrimeiro;
     while(noPtr->next!=NULL){
-        cout << "ad:" << noPtr->next;
         noPtr = noPtr->next;
     }
-    return noPtr;
+                    cout << "primeiro : "<< ptrPrimeiro << endl;
+                    cout << "prim next: "<< ptrPrimeiro->next << endl;
+                    cout << "Returning: "<< noPtr << endl;
+    ok = true;
+    return;
 }
