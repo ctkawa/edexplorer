@@ -57,6 +57,7 @@ int main()
     cout << "entrando: " << cambada[3] << endl; minhafila.entra(cambada[3]);
     cout << "entrando: " << cambada[2] << endl; minhafila.entra(cambada[2]);
     cout << "entrando: " << cambada[1] << endl; minhafila.entra(cambada[1]);
+    cout << "Elementos inseridos!!!   Agora irao sair:" << endl;
     minhafila.sai(*ptrEle,*ptrBool);
     if (*ptrBool) cout << "saindo: " << *ptrEle;
     minhafila.sai(*ptrEle,*ptrBool);
