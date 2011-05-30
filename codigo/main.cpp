@@ -33,6 +33,8 @@ int main()
     noPtr->next = noPtr;
     cout << noPtr << endl;
     cout << noPtr->next << endl;
+
+
 /*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
 
     cout << endl << "Testing no2!" << endl;

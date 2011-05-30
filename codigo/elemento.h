@@ -10,19 +10,24 @@ class elemento
 {
     public:
         elemento();
+        elemento(int);
+        elemento(elemento);
         virtual ~elemento();
 
+        void setValor(int);
+        int getValor();
+
         elemento& operator=(int esq){
-            conteudo = esq;
+            valor = esq;
             return *this;
         };
         friend ostream &operator<<(ostream &out, elemento e){
-            out << e.conteudo;
+            out << e.valor;
             return out;
         }
     protected:
     private:
-        int conteudo;
+        int valor;
 };
 
 #endif // ELEMENTO_H

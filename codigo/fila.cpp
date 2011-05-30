@@ -8,7 +8,12 @@ fila::fila()
 
 fila::~fila()
 {
-    //dtor
+/*===================================*/ cout << "Killing fila" << endl;
+    bool ok = false;
+    elemento *ele;
+    do
+        sai(ele,ok);
+    while(ok);
 }
 
 void fila::entra(elemento &ele){
