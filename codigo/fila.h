@@ -9,7 +9,7 @@ class fila
         fila();
         virtual ~fila();
 
-        void entra(elemento&);
+        void entra(const elemento&);            //conteudo do elemento nao muda
         void sai(elemento *(&ele), bool & ok);
         //bool verificaVazio();
         //bool verificaCheia();

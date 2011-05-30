@@ -16,7 +16,7 @@ fila::~fila()
     while(ok);
 }
 
-void fila::entra(elemento &ele){
+void fila::entra(const elemento &ele){
     no1 *noPtrRet;
     no1 *novoNo;
     bool ok = false;

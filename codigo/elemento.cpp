@@ -8,9 +8,9 @@ elemento::elemento(int v)
 {
     valor = v;
 }
-elemento::elemento(elemento e)
+elemento::elemento(const elemento &e)
 {
-    valor = elemento.valor;
+    valor = e.valor;
 }
 
 elemento::~elemento()
@@ -23,7 +23,7 @@ void elemento::setValor(int v){
     valor = v;
 }
 int elemento::getValor(){
-    retur valor;
+    return valor;
 }
 
 /*

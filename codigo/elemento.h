@@ -11,7 +11,7 @@ class elemento
     public:
         elemento();
         elemento(int);
-        elemento(elemento);
+        elemento(const elemento&);
         virtual ~elemento();
 
         void setValor(int);
