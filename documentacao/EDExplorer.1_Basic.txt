@@ -128,7 +128,7 @@ Lista:
   comentar implementacoes e testes
   adicionar ao relatorio
 
-06.1 - FILA: adicinar e retirar
+06.1 - FILA: adicinar e retirar			//CRIAR 6.2 primeiro!!!
   observacao:
     vide nomes adequados para estas funcoes
   implementar:

@@ -12,6 +12,6 @@ no1::no1(const elemento &e)
 
 no1::~no1()
 {
-    /*===================================*/ cout << "Killing no1" << endl;
+    /*===================================*/ //cout << "Killing no1" << endl;
     //dtor
 }

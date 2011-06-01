@@ -46,7 +46,7 @@ int main()
     cout << meuno2.dir->info << endl;
 
 /*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
-
+/*
 cout<<"-----------" <<endl;
 filaS afila(3);
 elemento e1,e2,e3,e;
@@ -61,7 +61,7 @@ afila.sai(e,okb);
 afila.sai(e,okb);
 cout << e <<endl;
 cout<<"-----------" <<endl;
-
+*/
 
     cout << endl << "Testing fila!" << endl;
     elemento cambada[10], ele;
@@ -72,9 +72,9 @@ cout<<"-----------" <<endl;
     cambada[6] = 7; cambada[7] = 5;
     cambada[8] = 1; cambada[9] = 9;
     filaS minhafila(4);
-    cout << "entrando: " << cambada[3];cout << "FLAG" << endl;
-         minhafila.entra(cambada[3], ok);cout << "FLAG" << endl;
-               cout << "  Result:" << ok << endl;cout << "FLAG" << endl;
+    cout << "entrando: " << cambada[3];
+         minhafila.entra(cambada[3], ok);
+               cout << "  Result:" << ok << endl;
     cout << "entrando: " << cambada[2];
          minhafila.entra(cambada[2], ok);
               cout << "  Result:" << ok << endl;
@@ -83,11 +83,11 @@ cout<<"-----------" <<endl;
               cout << "  Result:" << ok << endl;
     cout << "Elementos inseridos!!!   Agora irao sair:" << endl;
     minhafila.sai(ele,ok);
-    if (ok) cout << "saindo: " << ele << endl;      cout << "  Result:" << ok << endl;
+    if (ok) cout << "saindo: " << ele ;      cout << "  Result:" << ok << endl;
     minhafila.sai(ele,ok);
-    if (ok) cout << "saindo: " << ele << endl;      cout << "  Result:" << ok << endl;
+    if (ok) cout << "saindo: " << ele ;      cout << "  Result:" << ok << endl;
     minhafila.sai(ele,ok);
-    if (ok) cout << "saindo: " << ele << endl;      cout << "  Result:" << ok << endl;
+    if (ok) cout << "saindo: " << ele ;      cout << "  Result:" << ok << endl;
     cout << "Elementos Saíram!!" << endl;
 
     return 0;
