@@ -1,5 +1,3 @@
 FILA
 	Entra e Sai deve usar cheia/vazia, entao documentar cheia/vazia primeiro.
 
-LISTA
-	parece ser + facil usar no.
