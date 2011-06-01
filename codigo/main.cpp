@@ -2,7 +2,7 @@
 
 #include "no1.h"
 #include "no2.h"
-#include "fila.h"
+#include "filaS.h"
 
 using namespace std;
 
@@ -47,25 +47,47 @@ int main()
 
 /*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
 
+cout<<"-----------" <<endl;
+filaS afila(3);
+elemento e1,e2,e3,e;
+bool okb;
+e1=11; e2=12; e3=13; e=111;
+afila.entra(e3,okb);
+afila.entra(e2,okb);
+afila.entra(e1,okb);
+afila.entra(e,okb);
+afila.sai(e,okb);
+afila.sai(e,okb);
+afila.sai(e,okb);
+cout << e <<endl;
+cout<<"-----------" <<endl;
+
+
     cout << endl << "Testing fila!" << endl;
-    elemento cambada[10], *ptrEle;
-    bool *ptrBool;
+    elemento cambada[10], ele;
+    bool ok;
     cambada[0] = 3; cambada[1] = 13;
     cambada[2] = 2; cambada[3] = 6;
     cambada[4] = 4; cambada[5] = 8;
     cambada[6] = 7; cambada[7] = 5;
     cambada[8] = 1; cambada[9] = 9;
-    fila minhafila;
-    cout << "entrando: " << cambada[3] << endl; minhafila.entra(cambada[3]);
-    cout << "entrando: " << cambada[2] << endl; minhafila.entra(cambada[2]);
-    cout << "entrando: " << cambada[1] << endl; minhafila.entra(cambada[1]);
+    filaS minhafila(4);
+    cout << "entrando: " << cambada[3];cout << "FLAG" << endl;
+         minhafila.entra(cambada[3], ok);cout << "FLAG" << endl;
+               cout << "  Result:" << ok << endl;cout << "FLAG" << endl;
+    cout << "entrando: " << cambada[2];
+         minhafila.entra(cambada[2], ok);
+              cout << "  Result:" << ok << endl;
+    cout << "entrando: " << cambada[1];
+        minhafila.entra(cambada[1], ok);
+              cout << "  Result:" << ok << endl;
     cout << "Elementos inseridos!!!   Agora irao sair:" << endl;
-    minhafila.sai(ptrEle,*ptrBool);
-    if (*ptrBool) cout << "saindo: " << *ptrEle << endl;
-    minhafila.sai(ptrEle,*ptrBool);
-    if (*ptrBool) cout << "saindo: " << *ptrEle << endl;
-    minhafila.sai(ptrEle,*ptrBool);
-    if (*ptrBool) cout << "saindo: " << *ptrEle << endl;
+    minhafila.sai(ele,ok);
+    if (ok) cout << "saindo: " << ele << endl;      cout << "  Result:" << ok << endl;
+    minhafila.sai(ele,ok);
+    if (ok) cout << "saindo: " << ele << endl;      cout << "  Result:" << ok << endl;
+    minhafila.sai(ele,ok);
+    if (ok) cout << "saindo: " << ele << endl;      cout << "  Result:" << ok << endl;
     cout << "Elementos Saíram!!" << endl;
 
     return 0;

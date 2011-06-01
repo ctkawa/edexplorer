@@ -15,7 +15,7 @@ elemento::elemento(const elemento &e)
 
 elemento::~elemento()
 {
-    /*===================================*/ cout << "Killing elemento" << endl;
+    /*===================================*/ // cout << "Killing elemento" << endl;
     //dtor
 }
 
