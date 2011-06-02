@@ -6,6 +6,7 @@ class no2
 {
     public:
         no2();
+        no2(const no2&);
         virtual ~no2();
         elemento info;
         no2 *dir;

@@ -12,17 +12,20 @@ class lista_avancada
         virtual ~lista_avancada();
         int getTamanhoAtual();
         bool vazia();
-        void adicionar(no2&, bool&);
-        bool estaNaLista(elemento&);
-        void retirar(no2&, bool&);
+        void adicionar(elemento&, bool&);
+        bool estaNaLista(const elemento&);
+        void retirar(no2*, bool&);
         void retirar(elemento&, bool&);
         elemento info(no2&, bool&);
-        bool insereADireita(elemento&, no2&);
-        bool insereAEsquerda(elemento&, no2&);
+        bool insereADireita(elemento&, no2*);
+        bool insereAEsquerda(elemento&, no2*);
+
+        bool estaNaLista(const no2*);
 
     protected:
     private:
         int tamanhoAtual;
+        no2 header;
 
 };
 

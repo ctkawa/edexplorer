@@ -17,6 +17,9 @@ class elemento
         void setValor(int);
         int getValor();
 
+        bool operator==(elemento const &esq){
+            return (valor == esq.valor);
+        };
         elemento& operator=(int esq){
             valor = esq;
             return *this;
