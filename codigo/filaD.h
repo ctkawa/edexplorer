@@ -3,11 +3,11 @@
 #include "elemento.h"
 #include "no1.h"
 using namespace std;
-class fila
+class filaD
 {
     public:
-        fila();
-        virtual ~fila();
+        filaD();
+        virtual ~filaD();
 
         void entra(const elemento&);            //conteudo do elemento nao muda
         void sai(elemento *(&ele), bool & ok);

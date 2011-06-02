@@ -1,12 +1,12 @@
-#include "fila.h"
+#include "filaD.h"
 
-fila::fila()
+filaD::filaD()
 {
     ptrPrimeiro = NULL;
     //ctor
 }
 
-fila::~fila()
+filaD::~filaD()
 {
 /*===================================*/ cout << "Killing fila" << endl;
     bool ok = false;
@@ -16,7 +16,7 @@ fila::~fila()
     while(ok);
 }
 
-void fila::entra(const elemento &ele){
+void filaD::entra(const elemento &ele){
     no1 *noPtrRet;
     no1 *novoNo;
     bool ok = false;
@@ -32,7 +32,7 @@ void fila::entra(const elemento &ele){
     return;
 }
 
-void fila::sai(elemento *(&ele), bool & ok){
+void filaD::sai(elemento *(&ele), bool & ok){
     no1 *noPtr;
     if (ptrPrimeiro==NULL){
         return;
@@ -45,7 +45,7 @@ void fila::sai(elemento *(&ele), bool & ok){
 
 }
 
-void fila::procuraUltimo(no1 *(&noPtr), bool & ok){
+void filaD::procuraUltimo(no1 *(&noPtr), bool & ok){
     if (ptrPrimeiro == NULL){
         ok = false;
         return;

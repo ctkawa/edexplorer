@@ -1,15 +1,28 @@
 #include <iostream>
 
+#include "elemento.h"
 #include "no1.h"
 #include "no2.h"
-#include "filaS.h"
-#include "lista_avancada.h"
+//#include "filaS.h"
 
 using namespace std;
 
-
 int main()
 {
+	///////////////////////////////////////////////
+	cout << "Testando elemento" << endl;
+	
+	cout << "\tConstrutor sem argumento: ";
+	elemento e0;
+	cout << "ok" << endl;
+	
+	cout << "\tConstrutor com argumento: ";
+	elemento e1(1);
+	cout << "ok" << endl;
+	
+	
+	cout << endl;
+	///////////////////////////////////////////////
     cout << "Testing no1!" << endl;
 
     no1 meuno[3], *noPtr;
@@ -64,7 +77,7 @@ afila.sai(e,okb);
 cout << e <<endl;
 cout<<"-----------" <<endl;
 */
-
+/*
     cout << endl << "Testing fila!" << endl;
     elemento cambada[10], ele;
     bool ok;
@@ -91,19 +104,6 @@ cout<<"-----------" <<endl;
     minhafila.sai(ele,ok);
     if (ok) cout << "saindo: " << ele ;      cout << "  Result:" << ok << endl;
     cout << "Elementos Saíram!!" << endl;
-
-/*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
-
-    cout << endl << "Testing Lista Avancada!"<<endl;
-    lista_avancada minhaLista;
-    elemento eleLista[10];
-    for(int i=0; i<10; i++){
-        eleLista[i] = i;
-        minhaLista.insereADireita(eleLista[i], *(minhaLista.getPtrHeader()->esq));
-    }
-    minhaLista.printAll();
-
-
-    cout << " --- DEAD END --- " << endl;
+*/
     return 0;
 }
