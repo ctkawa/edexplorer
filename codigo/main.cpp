@@ -4,6 +4,7 @@
 #include "no1.h"
 #include "no2.h"
 //#include "filaS.h"
+#include "lista_avancada.h"
 
 using namespace std;
 
@@ -11,16 +12,16 @@ int main()
 {
 	///////////////////////////////////////////////
 	cout << "Testando elemento" << endl;
-	
+
 	cout << "\tConstrutor sem argumento: ";
 	elemento e0;
 	cout << "ok" << endl;
-	
+
 	cout << "\tConstrutor com argumento: ";
 	elemento e1(1);
 	cout << "ok" << endl;
-	
-	
+
+
 	cout << endl;
 	///////////////////////////////////////////////
     cout << "Testing no1!" << endl;
@@ -105,5 +106,22 @@ cout<<"-----------" <<endl;
     if (ok) cout << "saindo: " << ele ;      cout << "  Result:" << ok << endl;
     cout << "Elementos Saíram!!" << endl;
 */
+
+/*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
+
+    cout << endl << "Testing fila_avancada!" << endl;
+    lista_avancada minhaListaA;
+    elemento ele;
+
+    cout << "inserindo sequencia de 0 a 9 a esquerda."<<endl;
+    for(int i=0;i<10;i++){
+        ele = i;
+        if(!minhaListaA.insereAEsquerda(ele,*(minhaListaA.getPtrHeader()->dir)))
+            cout << "Erro na insercao de " << ele << endl;
+    }
+
+    cout << "imprimindo tudo de direita para esquerda." << endl;
+    minhaListaA.printAll();
+
     return 0;
 }
