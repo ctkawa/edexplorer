@@ -3,6 +3,7 @@
 #include "no1.h"
 #include "no2.h"
 #include "filaS.h"
+#include "lista_avancada.h"
 
 using namespace std;
 
@@ -91,5 +92,18 @@ cout<<"-----------" <<endl;
     if (ok) cout << "saindo: " << ele ;      cout << "  Result:" << ok << endl;
     cout << "Elementos Saíram!!" << endl;
 
+/*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
+
+    cout << endl << "Testing Lista Avancada!"<<endl;
+    lista_avancada minhaLista;
+    elemento eleLista[10];
+    for(int i=0; i<10; i++){
+        eleLista[i] = i;
+        minhaLista.insereADireita(eleLista[i], *(minhaLista.getPtrHeader()->esq));
+    }
+    minhaLista.printAll();
+
+
+    cout << " --- DEAD END --- " << endl;
     return 0;
 }

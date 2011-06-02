@@ -4,12 +4,17 @@ lista_avancada::lista_avancada(){
     header.dir = &header;
     header.esq = &header;
     header.info = NULL;
+    tamanhoAtual = 0;
 }
 lista_avancada::~lista_avancada(){
     //retirar e liberar todo elemento
-    while (tamanhoAtual>0)
-        //retirar;
-    ;
+    bool ok;
+    while (header.dir != &header){
+        retirar(header.dir,ok);
+        if (!ok)
+            cout << "TEVE PROBLEMAS NO DESTRUTOR LISTA AVANCADA" << endl;
+    }
+
 }
 
 int lista_avancada::getTamanhoAtual(){
@@ -101,31 +106,39 @@ bool lista_avancada::estaNaLista(const no2 *no){ // verifica se o no apontado es
     }
     return false;
 }
-bool lista_avancada::insereADireita(elemento &ele, no2 *no){   // inserir no com ELEMENTO na direita do NO2 passado
-    if(estaNaLista(no)){
+bool lista_avancada::insereADireita(elemento &ele, no2 &no){   // inserir no com ELEMENTO na direita do NO2 passado
+    if(estaNaLista(&no)){
         no2 *ptrNovo;
         ptrNovo = new no2();
         ptrNovo->info = ele;
-        ptrNovo->dir = no->dir;
-        ptrNovo->esq = no;
-        no->dir = ptrNovo;
+        ptrNovo->dir = no.dir;
+        ptrNovo->esq = &no;
+        no.dir = ptrNovo;
         ptrNovo->dir->esq = ptrNovo;
         tamanhoAtual++;
         return true;
     }
     return false;
 }
-bool lista_avancada::insereAEsquerda(elemento& ele, no2* no){
-    if(estaNaLista(no)){
+bool lista_avancada::insereAEsquerda(elemento& ele, no2 &no){
+    if(estaNaLista(&no)){
         no2 *ptrNovo;
         ptrNovo = new no2();
         ptrNovo->info = ele;
-        ptrNovo->esq = no->esq;
-        ptrNovo->dir = no;
-        no->esq = ptrNovo;
+        ptrNovo->esq = no.esq;
+        ptrNovo->dir = &no;
+        no.esq = ptrNovo;
         ptrNovo->esq->dir = ptrNovo;
         tamanhoAtual++;
         return true;
     }
     return false;
+}
+
+void lista_avancada::printAll(){
+    no2 *ptr;
+    ptr = header.dir;
+    while(ptr!=&header)
+        std::cout << ptr->info << ", ";
+    return;
 }

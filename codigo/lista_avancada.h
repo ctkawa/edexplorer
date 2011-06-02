@@ -10,6 +10,7 @@ class lista_avancada
     public:
         lista_avancada();
         virtual ~lista_avancada();
+
         int getTamanhoAtual();
         bool vazia();
         void adicionar(elemento&, bool&);
@@ -17,10 +18,15 @@ class lista_avancada
         void retirar(no2*, bool&);
         void retirar(elemento&, bool&);
         elemento info(no2&, bool&);
-        bool insereADireita(elemento&, no2*);
-        bool insereAEsquerda(elemento&, no2*);
+        bool insereADireita(elemento&, no2&);
+        bool insereAEsquerda(elemento&, no2&);
 
+        no2 *getPtrHeader(){
+            return &header;
+        }
         bool estaNaLista(const no2*);
+
+        void printAll();
 
     protected:
     private:
