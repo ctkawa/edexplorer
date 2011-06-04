@@ -94,16 +94,14 @@ elemento lista_avancada::info(no2& no, bool& ok){   //o q isto deve fazer?
 }
 
 bool lista_avancada::estaNaLista(const no2 *no){ // verifica se o no apontado esta sendo encadeado na lista
-    if (estaNaLista((no->info))){
-        no2 *ptr;
-        ptr = header.dir;
-        while(ptr != &header){
-            if(ptr==no){        //poderia verificar se no.esq aponta para anterior, etc...
-                return true;
-            }
-            ptr = ptr->dir;
+    no2 *ptr;
+    ptr = &header;
+    do{
+        if(ptr==no){        //poderia verificar se no.esq aponta para anterior, etc...
+            return true;
         }
-    }
+        ptr = ptr->dir;
+    }while(ptr != &header);
     return false;
 }
 bool lista_avancada::insereADireita(elemento &ele, no2 &no){   // inserir no com ELEMENTO na direita do NO2 passado
@@ -138,7 +136,10 @@ bool lista_avancada::insereAEsquerda(elemento& ele, no2 &no){
 void lista_avancada::printAll(){
     no2 *ptr;
     ptr = header.dir;
-    while(ptr!=&header)
+    while(ptr!=&header){
         std::cout << ptr->info << ", ";
+        ptr = ptr->dir;
+    }
+    std::cout << "Fim da lista" << endl;
     return;
 }
