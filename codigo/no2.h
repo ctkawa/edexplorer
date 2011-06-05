@@ -8,6 +8,9 @@ class no2
         no2();
         no2(const no2&);
         virtual ~no2();
+
+        elemento &getInfo();
+
         elemento info;
         no2 *dir;
         no2 *esq;

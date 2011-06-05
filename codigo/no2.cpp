@@ -18,3 +18,7 @@ no2::no2(const no2 &original){
     dir = original.dir;
     esq = original.esq;
 }
+
+elemento& no2::getInfo(){
+    return info;
+}
