@@ -55,13 +55,13 @@ int main()
 		* 7. classe arvore
 		*
 		****/
-	
+
 	////////////////////////////////////////////////
 	//
 	// 1. classe elemento
 	//
 	//
-	
+
 	titulo("classe elemento");
 
 	cout << "Construtor sem argumento: ";
@@ -72,7 +72,7 @@ int main()
 	elemento e1(1);
 	if(e1.getValor() == 1)
 		cout << "ok" << endl;
-	
+
 //	cout << "Construtor de cópia: ";
 //	e0 = *(new elemento(50));
 //	if( e0.getValor() == 50 )
@@ -82,12 +82,12 @@ int main()
 	e0.setValor(10);
 	if(e0.getValor() == 10)
 		cout << "ok" << endl;
-	
+
 	cout << "Sobrecarga de '=': ";
 	e0 = e1;
 	if( e0.getValor() == e1.getValor() )
 		cout << "ok" << endl;
-	
+
 	cout << "Sobrecarga de '<<': ok\t" << e0 << endl;
 
 	////////////////////////////////////////////////
@@ -95,31 +95,31 @@ int main()
 	// 2. classe no1
 	//
 	//
-	
+
     titulo("classe no1");
-	
+
 	cout << "Construtor sem argumento: ";
 	no1 node0;
 	cout << "ok" << endl;
-	
+
 	cout << "Construtor com argumento: ";
 	e0.setValor(100);
 	no1 node1(e0);
 	if(node1.getInfo() == e0)
 		cout << "ok" << endl;
-	
+
 	cout << "GET e SET info: ";
 	e0.setValor(99);
 	node1.setInfo(e0);
 	if(node1.getInfo() == e0)
 		cout << "ok" << endl;
-	
+
 	////////////////////////////////////////////////
 	//
 	// 2. classe no1old
 	//
 	//
-	
+
     titulo("classe no1old");
 
     no1old meuno[3], *noPtr;
@@ -151,7 +151,7 @@ int main()
 	// 3. classe no2old
 	//
 	//
-	
+
 	titulo("classe no2old");
 
     no2old meuno2;
@@ -166,7 +166,7 @@ int main()
 	// 4. classe fila
 	//
 	//
-	
+
 	titulo("classe fila");
 /*
 cout<<"-----------" <<endl;
@@ -218,9 +218,9 @@ cout<<"-----------" <<endl;
 	// 5. classe lista_simples
 	//
 	//
-	
+
 	titulo("classe lista_simples");
-	
+
 	////////////////////////////////////////////////
 	//
 	// 6. classe lista_avancada
@@ -228,14 +228,14 @@ cout<<"-----------" <<endl;
 	//
 
 	titulo("classe lista_avancada");
-	
+
     lista_avancada minhaListaA;
     elemento ele;
 
     cout << "inserindo sequencia de 0 a 9 a esquerda."<<endl;
     for(int i=0;i<10;i++){
         ele = i;
-        if(!minhaListaA.insereAEsquerda(ele,*(minhaListaA.getPtrHeader()->dir)))
+        if(!minhaListaA.insereAEsquerda(ele,*(minhaListaA.getPtrHeader()->getDir())))
             cout << "Erro na insercao de " << ele << endl;
     }
 
@@ -247,8 +247,8 @@ cout<<"-----------" <<endl;
 	// 7. classe arvore
 	//
 	//
-	
+
 	titulo("classe arvore");
-	
+
     return 0;
 }

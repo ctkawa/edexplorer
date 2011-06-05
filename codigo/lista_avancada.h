@@ -1,7 +1,7 @@
 
 #ifndef LISTA_AVANCADA_H
 #define LISTA_AVANCADA_H
-#include "no2old.h"
+#include "no2.h"
 #include "elemento.h"
 
 using namespace std;
@@ -15,23 +15,23 @@ class lista_avancada
         bool vazia();
         void adicionar(elemento&, bool&);
         bool estaNaLista(const elemento&);
-        void retirar(no2old*, bool&);
+        void retirar(no2*, bool&);
         void retirar(elemento&, bool&);
-        elemento info(no2old&, bool&);
-        bool insereADireita(elemento&, no2old&);
-        bool insereAEsquerda(elemento&, no2old&);
+        elemento info(no2&, bool&);
+        bool insereADireita(elemento&, no2&);
+        bool insereAEsquerda(elemento&, no2&);
 
-        no2old *getPtrHeader(){
+        no2 *getPtrHeader(){
             return &header;
         }
-        bool estaNaLista(const no2old*);
+        bool estaNaLista(const no2*);
 
         void printAll();
 
     protected:
     private:
         int tamanhoAtual;
-        no2old header;
+        no2 header;
 
 };
 
