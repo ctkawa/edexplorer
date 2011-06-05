@@ -73,12 +73,7 @@ int main()
 	if(e1.getValor() == 1)
 		cout << "ok" << endl;
 
-//	cout << "Construtor de cópia: ";
-//	e0 = *(new elemento(50));
-//	if( e0.getValor() == 50 )
-//		cout << "ok" << endl;
-
-		cout << "GET e SET valor: ";
+	cout << "GET e SET valor: ";
 	e0.setValor(10);
 	if(e0.getValor() == 10)
 		cout << "ok" << endl;
@@ -122,39 +117,30 @@ int main()
 	if(node0.getNext()->getInfo() == e0)
 		cout << "ok" << endl;
 	
-	
-	////////////////////////////////////////////////
-	//
-	// 2. classe no1old
-	//
-	//
-/*
-    titulo("classe no1old");
+    no1 meuno[3], *noPtr;
+    meuno[0].setInfo(10);
+    meuno[1].setInfo(11);
+    meuno[2].setInfo(12);
+    meuno[0].setNext(&meuno[1]);
+    meuno[1].setNext(&meuno[2]);
+    meuno[2].setNext(&meuno[0]);
 
-    no1old meuno[3], *noPtr;
-    meuno[0].info = 10;
-    meuno[1].info = 11;
-    meuno[2].info = 12;
-    meuno[0].next = &meuno[1];
-    meuno[1].next = &meuno[2];
-    meuno[2].next = &meuno[0];
+    cout << "meuno[0].getInfo() = " << meuno[0].getInfo() << " / at = " << meuno[0].getNext() << endl;
+    cout << "meuno[1].getInfo() = " << meuno[1].getInfo() << " / at = " << meuno[1].getNext()  << endl;
+    cout << "meuno[2].getInfo() = " << meuno[2].getInfo() << " / at = " << meuno[2].getNext()  << endl;
 
-    cout << "meuno[0].info = " << meuno[0].info << " / at = " << meuno[0].next << endl;
-    cout << "meuno[1].info = " << meuno[1].info << " / at = " << meuno[1].next  << endl;
-    cout << "meuno[2].info = " << meuno[2].info << " / at = " << meuno[2].next  << endl;
+    noPtr = meuno[0].getNext();
 
-    noPtr = meuno[0].next;
+    cout << noPtr->getInfo()<< endl;
+    noPtr->setInfo(77);
+    cout << noPtr->getInfo()<< endl;
 
-    cout << noPtr->info<< endl;
-    noPtr->info = 77;
-    cout << noPtr->info<< endl;
+    meuno[0].getNext()->setNext(&meuno[0]);
 
-    meuno[0].next->next = &meuno[0];
-
-    noPtr->next = noPtr;
+    noPtr->setNext(noPtr);
     cout << noPtr << endl;
-    cout << noPtr->next << endl;
-*/
+    cout << noPtr->getNext() << endl;
+
 	////////////////////////////////////////////////
 	//
 	// 3. classe no2
