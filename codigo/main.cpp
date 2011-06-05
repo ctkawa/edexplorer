@@ -23,10 +23,10 @@ Junho de 2011
 
 #include "elemento.h"
 //#include "no1old.h"
-#include "no1.h";
+#include "no1.h"
 //#include "no2old.h"
 #include "no2.h"
-//#include "filaS.h"
+#include "filaS.h"
 //#include "lista_simples.h"
 #include "lista_avancada_old.h"
 #include "arvorebb.h"
@@ -217,23 +217,24 @@ int main()
 	//
 
 	titulo("classe fila");
-/*
+
 cout<<"-----------" <<endl;
 filaS afila(3);
-elemento e1,e2,e3,e;
+
+elemento f1,f2,f3,f;
 bool okb;
-e1=11; e2=12; e3=13; e=111;
-afila.entra(e3,okb);
-afila.entra(e2,okb);
-afila.entra(e1,okb);
-afila.entra(e,okb);
-afila.sai(e,okb);
-afila.sai(e,okb);
-afila.sai(e,okb);
-cout << e <<endl;
+f1=11; f2=12; f3=13; f=111;
+afila.entra(f3,okb);
+afila.entra(f2,okb);
+afila.entra(f1,okb);
+afila.entra(f,okb);
+afila.sai(f,okb);
+afila.sai(f,okb);
+afila.sai(f,okb);
+cout << f <<endl;
 cout<<"-----------" <<endl;
-*/
-/*
+
+
     cout << endl << "Testing fila!" << endl;
     elemento cambada[10], ele;
     bool ok;
@@ -260,7 +261,7 @@ cout<<"-----------" <<endl;
     minhafila.sai(ele,ok);
     if (ok) cout << "saindo: " << ele ;      cout << "  Result:" << ok << endl;
     cout << "Elementos Saíram!!" << endl;
-*/
+
 
 	////////////////////////////////////////////////
 	//
@@ -279,7 +280,7 @@ cout<<"-----------" <<endl;
 	titulo("classe lista_avancada_old");
 
     lista_avancada_old minhaListaA;
-    elemento ele;
+//    elemento ele;
 
     cout << "inserindo sequencia de 0 a 9, sempre a esquerda de Header."<<endl;
     for(int i=0;i<10;i++){
