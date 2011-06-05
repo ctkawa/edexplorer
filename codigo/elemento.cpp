@@ -4,10 +4,12 @@ elemento::elemento()
 {
     valor = 0;
 }
+
 elemento::elemento(int v)
 {
     valor = v;
 }
+
 elemento::elemento(const elemento &e)
 {
     valor = e.valor;
@@ -22,12 +24,21 @@ elemento::~elemento()
 void elemento::setValor(int v){
     valor = v;
 }
+
 int elemento::getValor(){
     return valor;
 }
 
-/*
-elemento::elemento()& elemento::operator=(int esq){
-    conteudo = esq;
-    return *this;
-}*/
+bool elemento::operator==(elemento const &esq){
+	return (valor == esq.valor);
+};
+
+elemento& elemento::operator=(int esq){
+	valor = esq;
+	return *this;
+};
+
+ostream &operator<<(ostream &out, elemento e){
+	out << "<" << e.valor << ">";
+	return out;
+}

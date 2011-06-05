@@ -8,29 +8,20 @@
 using namespace std;
 class elemento
 {
-    public:
-        elemento();
-        elemento(int);
-        elemento(const elemento&);
-        virtual ~elemento();
+	friend ostream &operator<<(ostream &, elemento);
 
-        void setValor(int);
-        int getValor();
+	private:
+		int valor;
 
-        bool operator==(elemento const &esq){
-            return (valor == esq.valor);
-        };
-        elemento& operator=(int esq){
-            valor = esq;
-            return *this;
-        };
-        friend ostream &operator<<(ostream &out, elemento e){
-            out << e.valor;
-            return out;
-        }
-    protected:
-    private:
-        int valor;
+	public:
+		elemento();
+		elemento(int);
+		elemento(const elemento&);
+		virtual ~elemento();
+		void setValor(int);
+		int getValor();
+		bool operator==(elemento const &);
+		elemento& operator=(int);
 };
 
 #endif // ELEMENTO_H

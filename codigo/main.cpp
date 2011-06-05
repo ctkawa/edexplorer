@@ -20,8 +20,26 @@ int main()
 	cout << "\tConstrutor com argumento: ";
 	elemento e1(1);
 	cout << "ok" << endl;
+	
+//	cout << "\tConstrutor de cópia: ";
+//	e0 = *(new elemento(50));
+//	if( e0.getValor() == 50 )
+//		cout << "ok" << endl;
+	
+	cout << "\tSobrecarga de '=': ";
+	e0 = e1;
+	if( e0.getValor() == e1.getValor() )
+		cout << "ok" << endl;
+	
+	cout << "\tGET e SET valor: ";
+	e0.setValor(10);
+	if(e0.getValor() == 10)
+		cout << "ok" << endl;
 
-
+	cout << "\tSobrecarga de '<<': ok\t" << e0 << endl;
+	
+	
+	
 	cout << endl;
 	///////////////////////////////////////////////
     cout << "Testing no1!" << endl;
