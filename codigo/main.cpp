@@ -1,48 +1,99 @@
+/*
+
+UFSCar
+Departamento de Computação
+Bacharelado em Ciências da Computação
+
+Disciplina: Estruturas de Dados
+Professor: Dr. Roberto Ferrari
+
+Trabalho 2 - Implementação de estruturas indicadas
+
+Grupo:
+	Cleber ..., RA
+	Felipe ..., RA
+	João Celso Santos de Oliveira, RA 379247
+	Willian ..., RA
+
+Junho de 2011
+
+*/
+
 #include <iostream>
 
 #include "elemento.h"
 #include "no1.h"
 #include "no2.h"
 //#include "filaS.h"
+//#include "lista_simples.h"
 #include "lista_avancada.h"
+//#include "arvore.h"
 
 using namespace std;
 
+void titulo(string s){
+	int barras = 40, i;
+	cout << endl;
+	for(i=0;i<barras;i++) cout << "/";
+	cout << endl << "/// Testando " << s << endl;
+	for(i=0;i<barras;i++) cout << "/";
+	cout << endl << endl;
+}
+
 int main()
 {
-	///////////////////////////////////////////////
-	cout << "Testando elemento" << endl;
+	/**** Testes das classes/estruturas:
+		*
+		* 1. classe elemento
+		* 2. classe no1
+		* 3. classe no2
+		* 4. classe fila
+		* 5. classe lista_simples
+		* 6. classe lista_avancada
+		* 7. classe arvore
+		*
+		****/
+	
+	////////////////////////////////////////////////
+	//
+	// 1. classe elemento
+	//
+	//
+	
+	titulo("classe elemento");
 
-	cout << "\tConstrutor sem argumento: ";
+	cout << "Construtor sem argumento: ";
 	elemento e0;
 	cout << "ok" << endl;
 
-	cout << "\tConstrutor com argumento: ";
+	cout << "Construtor com argumento: ";
 	elemento e1(1);
 	cout << "ok" << endl;
 	
-//	cout << "\tConstrutor de cópia: ";
+//	cout << "Construtor de cópia: ";
 //	e0 = *(new elemento(50));
 //	if( e0.getValor() == 50 )
 //		cout << "ok" << endl;
+
+		cout << "GET e SET valor: ";
+	e0.setValor(10);
+	if(e0.getValor() == 10)
+		cout << "ok" << endl;
 	
-	cout << "\tSobrecarga de '=': ";
+	cout << "Sobrecarga de '=': ";
 	e0 = e1;
 	if( e0.getValor() == e1.getValor() )
 		cout << "ok" << endl;
 	
-	cout << "\tGET e SET valor: ";
-	e0.setValor(10);
-	if(e0.getValor() == 10)
-		cout << "ok" << endl;
-
-	cout << "\tSobrecarga de '<<': ok\t" << e0 << endl;
+	cout << "Sobrecarga de '<<': ok\t" << e0 << endl;
 	
+	////////////////////////////////////////////////
+	//
+	// 2. classe no1
+	//
+	//
 	
-	
-	cout << endl;
-	///////////////////////////////////////////////
-    cout << "Testing no1!" << endl;
+    titulo("classe no1");
 
     no1 meuno[3], *noPtr;
     meuno[0].info = 10;
@@ -68,8 +119,13 @@ int main()
     cout << noPtr << endl;
     cout << noPtr->next << endl;
 
-
-/*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
+	////////////////////////////////////////////////
+	//
+	// 3. classe no2
+	//
+	//
+	
+	titulo("classe no2");
 
     cout << endl << "Testing no2!" << endl;
     no2 meuno2;
@@ -79,7 +135,13 @@ int main()
     cout << meuno2.info << endl;
     cout << meuno2.dir->info << endl;
 
-/*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
+	////////////////////////////////////////////////
+	//
+	// 4. classe fila
+	//
+	//
+	
+	titulo("classe fila");
 /*
 cout<<"-----------" <<endl;
 filaS afila(3);
@@ -125,8 +187,22 @@ cout<<"-----------" <<endl;
     cout << "Elementos Saíram!!" << endl;
 */
 
-/*SEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDOSEPARANDO*/
+	////////////////////////////////////////////////
+	//
+	// 5. classe lista_simples
+	//
+	//
+	
+	titulo("classe lista_simples");
+	
+	////////////////////////////////////////////////
+	//
+	// 6. classe lista_avancada
+	//
+	//
 
+	titulo("classe lista_avancada");
+	
     cout << endl << "Testing fila_avancada!" << endl;
     lista_avancada minhaListaA;
     elemento ele;
@@ -141,5 +217,13 @@ cout<<"-----------" <<endl;
     cout << "imprimindo tudo de direita para esquerda." << endl;
     minhaListaA.printAll();
 
+	////////////////////////////////////////////////
+	//
+	// 7. classe arvore
+	//
+	//
+	
+	titulo("classe arvore");
+	
     return 0;
 }
