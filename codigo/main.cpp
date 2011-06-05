@@ -28,7 +28,7 @@ Junho de 2011
 #include "no2.h"
 #include "filaS.h"
 //#include "lista_simples.h"
-#include "lista_avancada_old.h"
+#include "lista_avancada.h"
 #include "arvorebb.h"
 
 using namespace std;
@@ -273,13 +273,13 @@ cout<<"-----------" <<endl;
 
 	////////////////////////////////////////////////
 	//
-	// 6. classe lista_avancada_old
+	// 6. classe lista_avancada
 	//
 	//
 
 	titulo("classe lista_avancada_old");
 
-    lista_avancada_old minhaListaA;
+    lista_avancada minhaListaA;
 //    elemento ele;
 
     cout << "inserindo sequencia de 0 a 9, sempre a esquerda de Header."<<endl;
