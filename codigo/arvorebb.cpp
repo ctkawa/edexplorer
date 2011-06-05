@@ -24,7 +24,7 @@ bool arvorebb::estaNaArvore(elemento &e){
     return (estaNaArvoreR(e,raiz));
 }
 
-bool arvorebb::estaNaArvoreR(elemento &e, no2 *no){
+bool arvorebb::estaNaArvoreR(elemento &e, no2old *no){
     if(no==NULL){
         return false;
     } else if(no->getInfo() == e){
@@ -40,9 +40,9 @@ bool arvorebb::insere(elemento &e){
         insereR(e, raiz);
 }
 
-bool arvorebb::insereR(elemento &e, no2 *&no){
+bool arvorebb::insereR(elemento &e, no2old *&no){
     if(no == NULL){
-        no = new no2;
+        no = new no2old;
         no->info = e;
         return true;
     } else if(no->info < e)
@@ -52,10 +52,10 @@ bool arvorebb::insereR(elemento &e, no2 *&no){
     return false;
 }
 
-elemento &arvorebb::remover(no2 *no, bool &ok){
+elemento &arvorebb::remover(no2old *no, bool &ok){
     return removerR(raiz, no, ok);
 }
-elemento &arvorebb::removerR(no2 *&arvore, no2 *no, bool &ok){
+elemento &arvorebb::removerR(no2old *&arvore, no2old *no, bool &ok){
     if(arvore==NULL){
         ok = false;
         elemento e;
@@ -71,7 +71,7 @@ elemento &arvorebb::removerR(no2 *&arvore, no2 *no, bool &ok){
             } else if(arvore->dir!=NULL && arvore->esq != NULL){ // no com 2 descendentes
 
             } else { // no com um descendente
-                no2 *temp;
+                no2old *temp;
                 temp = arvore;
                 if(arvore->dir!=NULL)
                     arvore = arvore->dir;
@@ -95,7 +95,7 @@ void arvorebb::imprimeAll(){
     imprimeAllR(raiz);
 }
 
-void arvorebb::imprimeAllR(no2 *no){
+void arvorebb::imprimeAllR(no2old *no){
     if(no!=NULL){
         cout << no->getInfo() << endl;
         imprimeAllR(no->esq);

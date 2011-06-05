@@ -1,7 +1,7 @@
 #ifndef ARVOREBB_H
 #define ARVOREBB_H_H
 #include "elemento.h"
-#include "no2.h"
+#include "no2old.h"
 
 class arvorebb
 {
@@ -9,22 +9,22 @@ class arvorebb
         arvorebb();
         arvorebb(const arvorebb &);
         virtual ~arvorebb();
-        no2* getRaiz(){return raiz;};
+        no2old* getRaiz(){return raiz;};
         bool vazia();
         bool estaNaArvore(elemento &);
         bool insere(elemento &);
-        elemento &remover(no2 *, bool &);
+        elemento &remover(no2old *, bool &);
 
         void imprimeAll();
 
     protected:
     private:
-        no2 *raiz;
-        bool estaNaArvoreR(elemento &, no2 *);
-        bool insereR(elemento &, no2 *&);
-        elemento &removerR(no2 *, no2 *, bool &);
+        no2old *raiz;
+        bool estaNaArvoreR(elemento &, no2old *);
+        bool insereR(elemento &, no2old *&);
+        elemento &removerR(no2old *, no2old *, bool &);
 
-        void imprimeAllR(no2*);
+        void imprimeAllR(no2old*);
 };
 
 #endif

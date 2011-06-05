@@ -23,7 +23,8 @@ Junho de 2011
 
 #include "elemento.h"
 #include "no1old.h"
-#include "no2.h"
+#include "no1.h";
+#include "no2old.h"
 //#include "filaS.h"
 //#include "lista_simples.h"
 #include "lista_avancada.h"
@@ -68,7 +69,8 @@ int main()
 
 	cout << "Construtor com argumento: ";
 	elemento e1(1);
-	cout << "ok" << endl;
+	if(e1.getValor() == 1)
+		cout << "ok" << endl;
 	
 //	cout << "Construtor de cópia: ";
 //	e0 = *(new elemento(50));
@@ -86,7 +88,7 @@ int main()
 		cout << "ok" << endl;
 	
 	cout << "Sobrecarga de '<<': ok\t" << e0 << endl;
-	
+
 	////////////////////////////////////////////////
 	//
 	// 2. classe no1
@@ -94,6 +96,24 @@ int main()
 	//
 	
     titulo("classe no1");
+	
+	cout << "Construtor sem argumento: ";
+	no1 node0;
+	cout << "ok" << endl;
+	
+	cout << "Construtor com argumento: ";
+	e0.setValor(100);
+	no1 node1(e0);
+	if(node1.getInfo() == e0)
+		cout << "ok" << endl;
+	
+	////////////////////////////////////////////////
+	//
+	// 2. classe no1old
+	//
+	//
+	
+    titulo("classe no1old");
 
     no1old meuno[3], *noPtr;
     meuno[0].info = 10;
@@ -121,13 +141,13 @@ int main()
 
 	////////////////////////////////////////////////
 	//
-	// 3. classe no2
+	// 3. classe no2old
 	//
 	//
 	
-	titulo("classe no2");
+	titulo("classe no2old");
 
-    no2 meuno2;
+    no2old meuno2;
     meuno2.info = 720;
     meuno2.dir = &meuno2;
     meuno2.esq = &meuno2;

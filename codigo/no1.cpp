@@ -1,17 +1,30 @@
 #include "no1.h"
 
-no1::no1()
-{
+no1::no1(){
     next = NULL;
 }
-no1::no1(const elemento &e)
-{
+
+no1::no1(elemento e){
     info = e;
     next = NULL;
 }
 
-no1::~no1()
-{
-    /*===================================*/ //cout << "Killing no1" << endl;
-    //dtor
+no1::~no1(){
+    
+}
+
+elemento no1::getInfo(){
+	return info;
+}
+
+void no1::setInfo(elemento e){
+	info = e;
+}
+
+no1* no1::getNext(){
+	return next;
+}
+
+void no1::setNext(no1* no){
+	next = no;
 }
