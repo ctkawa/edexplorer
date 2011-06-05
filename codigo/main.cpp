@@ -10,7 +10,7 @@ Professor: Dr. Roberto Ferrari
 Trabalho 2 - Implementação de estruturas indicadas
 
 Grupo:
-	Cleber ..., RA
+	Cleber Takahito Kawamorita, RA 379425
 	Felipe ..., RA
 	João Celso Santos de Oliveira, RA 379247
 	Willian ..., RA
@@ -232,14 +232,14 @@ cout<<"-----------" <<endl;
     lista_avancada minhaListaA;
     elemento ele;
 
-    cout << "inserindo sequencia de 0 a 9 a esquerda."<<endl;
+    cout << "inserindo sequencia de 0 a 9, sempre a esquerda de Header."<<endl;
     for(int i=0;i<10;i++){
         ele = i;
-        if(!minhaListaA.insereAEsquerda(ele,*(minhaListaA.getPtrHeader()->getDir())))
+        if(!minhaListaA.insereAEsquerda(ele,*(minhaListaA.getPtrHeader())))
             cout << "Erro na insercao de " << ele << endl;
     }
 
-    cout << "imprimindo tudo de direita para esquerda." << endl;
+    cout << "imprimindo tudo de Header para direita. Deve ser ordem crescente:" << endl;
     minhaListaA.printAll();
 
 	////////////////////////////////////////////////
