@@ -22,9 +22,9 @@ Junho de 2011
 #include <iostream>
 
 #include "elemento.h"
-#include "no1old.h"
+//#include "no1old.h"
 #include "no1.h";
-#include "no2old.h"
+//#include "no2old.h"
 #include "no2.h"
 //#include "filaS.h"
 //#include "lista_simples.h"
@@ -119,7 +119,7 @@ int main()
 	// 2. classe no1old
 	//
 	//
-
+/*
     titulo("classe no1old");
 
     no1old meuno[3], *noPtr;
@@ -145,13 +145,13 @@ int main()
     noPtr->next = noPtr;
     cout << noPtr << endl;
     cout << noPtr->next << endl;
-
+*/
 	////////////////////////////////////////////////
 	//
 	// 3. classe no2old
 	//
 	//
-
+/*
 	titulo("classe no2old");
 
     no2old meuno2;
@@ -160,7 +160,7 @@ int main()
     meuno2.esq = &meuno2;
     cout << meuno2.info << endl;
     cout << meuno2.dir->info << endl;
-
+*/
 	////////////////////////////////////////////////
 	//
 	// 4. classe fila
