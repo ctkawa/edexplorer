@@ -6,6 +6,10 @@ no2::no2(){
     esq = NULL;
 }
 
+no2::no2(elemento e){
+	info = e;
+}
+
 no2::~no2(){
 
 }

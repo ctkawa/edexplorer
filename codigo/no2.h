@@ -11,6 +11,7 @@ class no2
 		
 	public:
 		no2();
+		no2(elemento);
 		no2(const no2&);
 		virtual ~no2();
 

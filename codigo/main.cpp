@@ -28,7 +28,7 @@ Junho de 2011
 #include "no2.h"
 //#include "filaS.h"
 //#include "lista_simples.h"
-#include "lista_avancada.h"
+#include "lista_avancada_old.h"
 //#include "arvorebb.h"
 
 using namespace std;
@@ -114,6 +114,15 @@ int main()
 	if(node1.getInfo() == e0)
 		cout << "ok" << endl;
 
+	cout << "GET e SET next: ";
+	e0.setValor(5);
+	no1* pnode2 = new no1();
+	pnode2->setInfo(e0);
+	node0.setNext(pnode2);
+	if(node0.getNext()->getInfo() == e0)
+		cout << "ok" << endl;
+	
+	
 	////////////////////////////////////////////////
 	//
 	// 2. classe no1old
@@ -146,6 +155,46 @@ int main()
     cout << noPtr << endl;
     cout << noPtr->next << endl;
 */
+	////////////////////////////////////////////////
+	//
+	// 3. classe no2
+	//
+	//
+	
+	titulo("classe no2");
+	
+	cout << "Construtor sem argumento: ";
+	no2 n2_0;
+	cout << "ok" << endl;
+	
+	cout << "Construtor com argumento: ";
+	e0.setValor(100);
+	no2 n2_1(e0);
+	if(n2_1.getInfo() == e0)
+		cout << "ok" << endl;
+	
+	cout << "GET e SET info: ";
+	e0.setValor(99);
+	n2_1.setInfo(e0);
+	if(n2_1.getInfo() == e0)
+		cout << "ok" << endl;
+	
+	
+	cout << "GET e SET dir: ";
+	e0.setValor(5);
+	no2* pn2_2 = new no2();
+	pn2_2->setInfo(e0);
+	n2_0.setDir(pn2_2);
+	if(n2_0.getDir()->getInfo() == e0)
+		cout << "ok" << endl;
+	
+	cout << "GET e SET esq: ";
+	e0.setValor(6);
+	pn2_2->setInfo(e0);
+	n2_0.setEsq(pn2_2);
+	if(n2_0.getEsq()->getInfo() == e0)
+		cout << "ok" << endl;
+	
 	////////////////////////////////////////////////
 	//
 	// 3. classe no2old
@@ -223,13 +272,13 @@ cout<<"-----------" <<endl;
 
 	////////////////////////////////////////////////
 	//
-	// 6. classe lista_avancada
+	// 6. classe lista_avancada_old
 	//
 	//
 
-	titulo("classe lista_avancada");
+	titulo("classe lista_avancada_old");
 
-    lista_avancada minhaListaA;
+    lista_avancada_old minhaListaA;
     elemento ele;
 
     cout << "inserindo sequencia de 0 a 9, sempre a esquerda de Header."<<endl;

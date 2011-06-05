@@ -39,7 +39,7 @@ elemento& elemento::operator=(int esq){
 };
 
 ostream &operator<<(ostream &out, elemento e){
-	out << "<" << e.valor << ">";
+	out << "[" << e.valor << "]";
 	return out;
 }
 
