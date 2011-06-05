@@ -3,13 +3,13 @@
 lista_avancada::lista_avancada(){
     header.setDir(&header);
     header.setEsq(&header);
-    header.setInfo(NULL);
+//    header.setInfo(NULL); // desnecessário pois elemento já tem valor padrão 0
     tamanhoAtual = 0;
 }
 lista_avancada::~lista_avancada(){
     //retirar e liberar todo elemento
     bool ok;
-    while ( header.getDir() != &header){
+    while (header.getDir() != &header){
         retirar(header.getDir(),ok);
         if (!ok)
             cout << "TEVE PROBLEMAS NO DESTRUTOR LISTA AVANCADA" << endl;
@@ -34,7 +34,7 @@ void lista_avancada::adicionar(elemento& ele, bool& ok){
     ptrNovo->setDir(header.getDir());
     ptrNovo->setEsq(&header);
     header.setDir(ptrNovo);
-    (ptrNovo->getDir())->setEsq(ptrNovo);
+    ptrNovo->getDir()->setEsq(ptrNovo);
     tamanhoAtual++;
     ok = true;
 }
@@ -55,8 +55,8 @@ void lista_avancada::retirar(no2 *noRetir, bool &ok){
     ptr = header.getDir();
     while(ptr != &header){
         if(ptr == noRetir){
-            (ptr->getDir())->setEsq(ptr->getEsq());
-            (ptr->getEsq())->setDir(ptr->getDir());
+            ptr->getDir()->setEsq(ptr->getEsq());
+            ptr->getEsq()->setDir(ptr->getDir());
             delete ptr;
             ok = true;
             return;
@@ -74,8 +74,8 @@ void lista_avancada::retirar(elemento& ele, bool& ok){
         ptr = header.getDir();
         while(ptr != &header){
             if(ptr->getInfo() == ele){
-                (ptr->getDir())->setEsq(ptr->getEsq());
-                (ptr->getEsq())->setDir(ptr->getDir());
+                ptr->getDir()->setEsq(ptr->getEsq());
+                ptr->getEsq()->setDir(ptr->getDir());
                 delete ptr;
                 ok = true;
                 return;
@@ -104,6 +104,7 @@ bool lista_avancada::estaNaLista(const no2 *no){ // verifica se o no apontado es
     }while(ptr != &header);
     return false;
 }
+
 bool lista_avancada::insereADireita(elemento &ele, no2 &no){   // inserir no com ELEMENTO na direita do NO2 passado
     if(estaNaLista(&no)){
         no2 *ptrNovo;
@@ -112,7 +113,7 @@ bool lista_avancada::insereADireita(elemento &ele, no2 &no){   // inserir no com
         ptrNovo->setDir(no.getDir());
         ptrNovo->setEsq(&no);
         no.setDir(ptrNovo);
-        (ptrNovo->getDir())->setEsq(ptrNovo);
+        ptrNovo->getDir()->setEsq(ptrNovo);
         tamanhoAtual++;
         return true;
     }
@@ -126,7 +127,7 @@ bool lista_avancada::insereAEsquerda(elemento& ele, no2 &no){
         ptrNovo->setEsq(no.getEsq());
         ptrNovo->setDir(&no);
         no.setEsq(ptrNovo);
-        (ptrNovo->getEsq())->setDir(ptrNovo);
+        ptrNovo->getEsq()->setDir(ptrNovo);
         tamanhoAtual++;
         return true;
     }
@@ -137,9 +138,9 @@ void lista_avancada::printAll(){
     no2 *ptr;
     ptr = header.getDir();
     while(ptr!=&header){
-        std::cout << ptr->getInfo() << ", ";
+        cout << ptr->getInfo() << ", ";
         ptr = ptr->getDir();
     }
-    std::cout << "Fim da lista" << endl;
+    cout << "Fim da lista" << endl;
     return;
 }
