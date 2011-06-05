@@ -76,9 +76,12 @@ elemento &arvorebb::removerR(no2 *arvore, no2 *no, bool &ok){
                 ele = arvore->getInfo();
                 delete arvore;
                 arvore = NULL;
+                ok = true;
                 return ele;
             } else if(arvore->getDir()!=NULL && arvore->getEsq() != NULL){ // no com 2 descendentes
-
+                //Inserir direita em direita (maior) da esquerda
+                maior(arvore->getEsq())->setDir(arvore->getDir());
+                arvore->setDir(NULL);
             } else { // no com um descendente
                 no2 *temp;
                 temp = arvore;
@@ -92,7 +95,14 @@ elemento &arvorebb::removerR(no2 *arvore, no2 *no, bool &ok){
     }
 }
 
-
+no2* arvorebb::maior(no2 *raiz){
+    if(raiz==NULL)
+        return NULL;
+    else if(raiz->getDir()==NULL)
+        return raiz;
+    else
+        return maior(raiz->getDir());
+}
 
 
 

@@ -23,7 +23,7 @@ class arvorebb
         bool estaNaArvoreR(elemento &, no2 *);
         bool insereR(elemento &, no2 *&);
         elemento &removerR(no2*, no2 *, bool &);
-
+        no2* maior(no2 *);
         void imprimeAllR(no2*);
 };
 
