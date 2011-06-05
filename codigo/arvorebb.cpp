@@ -41,16 +41,20 @@ bool arvorebb::insere(elemento &e){
 }
 
 bool arvorebb::insereR(elemento &e, no2 *(&no)){
-    cout << "inserindo " << e << endl;
+    //cout << "inserindo " << e << endl;
     if(no == NULL){
         no = new no2;
         no->setInfo(e);
-        cout << "INSERIDO EM: " << no << endl;
+        //cout << "INSERIDO EM: " << no << endl;
         return true;
     } else if(no->getInfo() < e){
-        return insereR(e, &(&no->getEsq()));
+        no2 *temp;
+        temp = no->getEsq();
+        return insereR(e, temp);
     }else{
-        return insereR(e, no->getDir());
+        no2 *temp;
+        temp = no->getDir();
+        return insereR(e, temp);
     }
     return false;
 }
@@ -95,7 +99,7 @@ elemento &arvorebb::removerR(no2 *arvore, no2 *no, bool &ok){
 
 
 void arvorebb::imprimeAll(){
-    cout << "raiz:" << raiz << endl;
+    //cout << "raiz:" << raiz << endl;
     imprimeAllR(raiz);
 }
 
@@ -106,6 +110,7 @@ void arvorebb::imprimeAllR(no2 *no){
         imprimeAllR(no->getEsq());
         imprimeAllR(no->getDir());
     } else
-        cout << "no nulo" << endl;
+        //cout << "no nulo" << endl;
+        return;
 }
 
