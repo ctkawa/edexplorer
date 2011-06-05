@@ -21,7 +21,7 @@ class arvorebb
     private:
         no2 *raiz;
         bool estaNaArvoreR(elemento &, no2 *);
-        bool insereR(elemento &, no2 *);
+        bool insereR(elemento &, no2 *&);
         elemento &removerR(no2*, no2 *, bool &);
 
         void imprimeAllR(no2*);

@@ -29,7 +29,7 @@ Junho de 2011
 //#include "filaS.h"
 //#include "lista_simples.h"
 #include "lista_avancada_old.h"
-//#include "arvorebb.h"
+#include "arvorebb.h"
 
 using namespace std;
 
@@ -298,6 +298,14 @@ cout<<"-----------" <<endl;
 	//
 
 	titulo("classe arvore");
+    arvorebb meuArvore;
+    for(int i=0;i<10;i++){
+        ele = i;
+        if(!meuArvore.insere(ele))
+            cout << "Erro na insercao de " << ele << endl;
+        cout << "raiz: " << meuArvore.getRaiz() << endl;
+    }
+    meuArvore.imprimeAll();
 
     return 0;
 }
