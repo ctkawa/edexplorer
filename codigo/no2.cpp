@@ -1,6 +1,6 @@
 #include "no2.h"
 
-no2old::no2(){
+no2::no2(){
     info = 0;
     dir = NULL;
     esq = NULL;

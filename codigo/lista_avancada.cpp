@@ -28,8 +28,8 @@ bool lista_avancada::vazia(){
 }
 
 void lista_avancada::adicionar(elemento& ele, bool& ok){
-    no2 *ptrNovo;
-    ptrNovo = new no2();
+    no2old *ptrNovo;
+    ptrNovo = new no2old();
     ptrNovo->info = ele;
     ptrNovo->dir = header.dir;
     ptrNovo->esq = &header;
@@ -40,7 +40,7 @@ void lista_avancada::adicionar(elemento& ele, bool& ok){
 }
 
 bool lista_avancada::estaNaLista(const elemento& ele){
-    no2 *ptr;
+    no2old *ptr;
     ptr = header.dir;
     while(ptr != &header){
         if(ptr->info == ele)
@@ -50,8 +50,8 @@ bool lista_avancada::estaNaLista(const elemento& ele){
     return false;
 }
 
-void lista_avancada::retirar(no2 *noRetir, bool &ok){
-    no2 *ptr;
+void lista_avancada::retirar(no2old *noRetir, bool &ok){
+    no2old *ptr;
     ptr = header.dir;
     while(ptr != &header){
         if(ptr == noRetir){
@@ -70,7 +70,7 @@ void lista_avancada::retirar(no2 *noRetir, bool &ok){
 void lista_avancada::retirar(elemento& ele, bool& ok){
     ok = false;
     if (estaNaLista(ele)){  // talvez nao tenha sentido fazer isso, vai percorrer 2x
-        no2 *ptr;
+        no2old *ptr;
         ptr = header.dir;
         while(ptr != &header){
             if(ptr->info == ele){
@@ -88,13 +88,13 @@ void lista_avancada::retirar(elemento& ele, bool& ok){
     return;
 }
 
-elemento lista_avancada::info(no2& no, bool& ok){   //o q isto deve fazer?
+elemento lista_avancada::info(no2old& no, bool& ok){   //o q isto deve fazer?
     ok = true;
     return no.info;
 }
 
-bool lista_avancada::estaNaLista(const no2 *no){ // verifica se o no apontado esta sendo encadeado na lista
-    no2 *ptr;
+bool lista_avancada::estaNaLista(const no2old *no){ // verifica se o no apontado esta sendo encadeado na lista
+    no2old *ptr;
     ptr = &header;
     do{
         if(ptr==no){        //poderia verificar se no.esq aponta para anterior, etc...
@@ -104,10 +104,10 @@ bool lista_avancada::estaNaLista(const no2 *no){ // verifica se o no apontado es
     }while(ptr != &header);
     return false;
 }
-bool lista_avancada::insereADireita(elemento &ele, no2 &no){   // inserir no com ELEMENTO na direita do NO2 passado
+bool lista_avancada::insereADireita(elemento &ele, no2old &no){   // inserir no com ELEMENTO na direita do NO2 passado
     if(estaNaLista(&no)){
-        no2 *ptrNovo;
-        ptrNovo = new no2();
+        no2old *ptrNovo;
+        ptrNovo = new no2old();
         ptrNovo->info = ele;
         ptrNovo->dir = no.dir;
         ptrNovo->esq = &no;
@@ -118,10 +118,10 @@ bool lista_avancada::insereADireita(elemento &ele, no2 &no){   // inserir no com
     }
     return false;
 }
-bool lista_avancada::insereAEsquerda(elemento& ele, no2 &no){
+bool lista_avancada::insereAEsquerda(elemento& ele, no2old &no){
     if(estaNaLista(&no)){
-        no2 *ptrNovo;
-        ptrNovo = new no2();
+        no2old *ptrNovo;
+        ptrNovo = new no2old();
         ptrNovo->info = ele;
         ptrNovo->esq = no.esq;
         ptrNovo->dir = &no;
@@ -134,7 +134,7 @@ bool lista_avancada::insereAEsquerda(elemento& ele, no2 &no){
 }
 
 void lista_avancada::printAll(){
-    no2 *ptr;
+    no2old *ptr;
     ptr = header.dir;
     while(ptr!=&header){
         std::cout << ptr->info << ", ";

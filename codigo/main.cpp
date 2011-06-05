@@ -110,8 +110,8 @@ int main()
 	
 	cout << "GET e SET info: ";
 	e0.setValor(99);
-	node1.setValor(e0);
-	if(node1.getValor() == e0)
+	node1.setInfo(e0);
+	if(node1.getInfo() == e0)
 		cout << "ok" << endl;
 	
 	////////////////////////////////////////////////
