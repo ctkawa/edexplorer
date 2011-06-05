@@ -25,10 +25,11 @@ Junho de 2011
 #include "no1old.h"
 #include "no1.h";
 #include "no2old.h"
+#include "no2.h"
 //#include "filaS.h"
 //#include "lista_simples.h"
 #include "lista_avancada.h"
-//#include "arvore.h"
+//#include "arvorebb.h"
 
 using namespace std;
 
@@ -105,6 +106,12 @@ int main()
 	e0.setValor(100);
 	no1 node1(e0);
 	if(node1.getInfo() == e0)
+		cout << "ok" << endl;
+	
+	cout << "GET e SET info: ";
+	e0.setValor(99);
+	node1.setValor(e0);
+	if(node1.getValor() == e0)
 		cout << "ok" << endl;
 	
 	////////////////////////////////////////////////
