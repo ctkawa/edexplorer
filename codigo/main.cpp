@@ -22,7 +22,7 @@ Junho de 2011
 #include <iostream>
 
 #include "elemento.h"
-#include "no1.h"
+#include "no1old.h"
 #include "no2.h"
 //#include "filaS.h"
 //#include "lista_simples.h"
@@ -95,7 +95,7 @@ int main()
 	
     titulo("classe no1");
 
-    no1 meuno[3], *noPtr;
+    no1old meuno[3], *noPtr;
     meuno[0].info = 10;
     meuno[1].info = 11;
     meuno[2].info = 12;
@@ -127,7 +127,6 @@ int main()
 	
 	titulo("classe no2");
 
-    cout << endl << "Testing no2!" << endl;
     no2 meuno2;
     meuno2.info = 720;
     meuno2.dir = &meuno2;
@@ -203,7 +202,6 @@ cout<<"-----------" <<endl;
 
 	titulo("classe lista_avancada");
 	
-    cout << endl << "Testing fila_avancada!" << endl;
     lista_avancada minhaListaA;
     elemento ele;
 

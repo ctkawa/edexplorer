@@ -1,7 +1,7 @@
 #ifndef FILA_H
 #define FILA_H
 #include "elemento.h"
-#include "no1.h"
+#include "no1old.h"
 using namespace std;
 class filaD
 {
@@ -14,10 +14,10 @@ class filaD
         //bool verificaVazio();
         //bool verificaCheia();
         //Cria fila e o constructor
-        void procuraUltimo(no1 *(&noPtr), bool & ok);
+        void procuraUltimo(no1old *(&noPtr), bool & ok);
     protected:
     private:
-            no1 *ptrPrimeiro;
+            no1old *ptrPrimeiro;
 };
 
 #endif // FILA_H

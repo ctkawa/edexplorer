@@ -17,10 +17,10 @@ filaD::~filaD()
 }
 
 void filaD::entra(const elemento &ele){
-    no1 *noPtrRet;
-    no1 *novoNo;
+    no1old *noPtrRet;
+    no1old *novoNo;
     bool ok = false;
-    novoNo = new no1();
+    novoNo = new no1old();
     novoNo->info = ele;
     procuraUltimo(noPtrRet, ok);
     if (ok){
@@ -33,7 +33,7 @@ void filaD::entra(const elemento &ele){
 }
 
 void filaD::sai(elemento *(&ele), bool & ok){
-    no1 *noPtr;
+    no1old *noPtr;
     if (ptrPrimeiro==NULL){
         return;
     }
@@ -45,7 +45,7 @@ void filaD::sai(elemento *(&ele), bool & ok){
 
 }
 
-void filaD::procuraUltimo(no1 *(&noPtr), bool & ok){
+void filaD::procuraUltimo(no1old *(&noPtr), bool & ok){
     if (ptrPrimeiro == NULL){
         ok = false;
         return;
