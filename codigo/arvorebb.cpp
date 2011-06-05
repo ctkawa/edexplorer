@@ -1,16 +1,13 @@
 #include "arvorebb.h"
 
 
-arvorebb::arvorebb()
-{
+arvorebb::arvorebb(){
     raiz = NULL;
 }
-arvorebb::arvorebb(const arvorebb &e)
-{
+arvorebb::arvorebb(const arvorebb &e){
 }
 
-arvorebb::~arvorebb()
-{
+arvorebb::~arvorebb(){
 
 }
 
@@ -37,24 +34,29 @@ bool arvorebb::insere(elemento &e){
     if(estaNaArvore(e))
         return false;
     else
-        insereR(e, raiz);
+        return insereR(e, raiz);
 }
 
-bool arvorebb::insereR(elemento &e, no2 *(&no)){
-    //cout << "inserindo " << e << endl;
+bool arvorebb::insereR(elemento &e, no2 *&no){  //referencia de ponteiro
+    cout << "inserindo " << e << " para " << no << endl;
     if(no == NULL){
         no = new no2;
         no->setInfo(e);
-        //cout << "INSERIDO EM: " << no << endl;
+        cout << "INSERIDO EM: " << no << endl << "raiz:" << raiz<< endl;
         return true;
     } else if(no->getInfo() < e){
         no2 *temp;
         temp = no->getEsq();
-        return insereR(e, temp);
+        insereR(e, temp);
+        no->setEsq(temp);
+        ;
     }else{
         no2 *temp;
         temp = no->getDir();
-        return insereR(e, temp);
+        insereR(e, temp);
+        no->setDir(temp);
+        //return insereR(e, no->getDir());
+        ;
     }
     return false;
 }
@@ -99,12 +101,11 @@ elemento &arvorebb::removerR(no2 *arvore, no2 *no, bool &ok){
 
 
 void arvorebb::imprimeAll(){
-    //cout << "raiz:" << raiz << endl;
+    cout << "Imprimindo tudo, raiz = "<<raiz<<endl;
     imprimeAllR(raiz);
 }
 
 void arvorebb::imprimeAllR(no2 *no){
-
     if(no!=NULL){
         cout << no->getInfo() << endl;
         imprimeAllR(no->getEsq());
