@@ -42,3 +42,11 @@ ostream &operator<<(ostream &out, elemento e){
 	out << "<" << e.valor << ">";
 	return out;
 }
+
+bool elemento::operator<(elemento const &esq){
+	return (valor < esq.valor);
+};
+
+bool elemento::operator>(elemento const &esq){
+	return (valor > esq.valor);
+};

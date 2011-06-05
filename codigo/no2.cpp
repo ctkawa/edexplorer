@@ -7,7 +7,7 @@ no2::no2(){
 }
 
 no2::~no2(){
-    
+
 }
 
 no2::no2(const no2 &original){

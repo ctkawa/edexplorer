@@ -22,6 +22,8 @@ class elemento
 		int getValor();
 		bool operator==(elemento const &);
 		elemento& operator=(int);
+		bool operator<(elemento const &);
+		bool operator>(elemento const &);
 };
 
 #endif // ELEMENTO_H

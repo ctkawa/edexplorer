@@ -24,13 +24,13 @@ bool arvorebb::estaNaArvore(elemento &e){
     return (estaNaArvoreR(e,raiz));
 }
 
-bool arvorebb::estaNaArvoreR(elemento &e, no2old *no){
+bool arvorebb::estaNaArvoreR(elemento &e, no2 *no){
     if(no==NULL){
         return false;
     } else if(no->getInfo() == e){
         return true;
     } else                                                              //ìf(no->getInfo() > e)......
-        return (estaNaArvoreR(e,no->dir) || estaNaArvoreR(e,no->esq));
+        return (estaNaArvoreR(e,no->getDir()) || estaNaArvoreR(e,no->getEsq()));
 }
 
 bool arvorebb::insere(elemento &e){
@@ -40,43 +40,43 @@ bool arvorebb::insere(elemento &e){
         insereR(e, raiz);
 }
 
-bool arvorebb::insereR(elemento &e, no2old *&no){
+bool arvorebb::insereR(elemento &e, no2 *no){
     if(no == NULL){
-        no = new no2old;
-        no->info = e;
+        no = new no2;
+        no->setInfo(e);
         return true;
-    } else if(no->info < e)
-        return insereR(e, no->esq);
+    } else if(no->getInfo() < e)
+        return insereR(e, no->getEsq());
     else
-        return insereR(e, no->dir);
+        return insereR(e, no->getDir());
     return false;
 }
 
-elemento &arvorebb::remover(no2old *no, bool &ok){
+elemento &arvorebb::remover(no2 *no, bool &ok){
     return removerR(raiz, no, ok);
 }
-elemento &arvorebb::removerR(no2old *&arvore, no2old *no, bool &ok){
+elemento &arvorebb::removerR(no2 *arvore, no2 *no, bool &ok){
     if(arvore==NULL){
         ok = false;
         elemento e;
         return e;
     } else {
         if(arvore == no){
-            if(arvore->dir==NULL && arvore->esq == NULL){ //no sem descendente
+            if(arvore->getDir()==NULL && arvore->getEsq() == NULL){ //no sem descendente
                 elemento ele;
                 ele = arvore->getInfo();
                 delete arvore;
                 arvore = NULL;
                 return ele;
-            } else if(arvore->dir!=NULL && arvore->esq != NULL){ // no com 2 descendentes
+            } else if(arvore->getDir()!=NULL && arvore->getEsq() != NULL){ // no com 2 descendentes
 
             } else { // no com um descendente
-                no2old *temp;
+                no2 *temp;
                 temp = arvore;
-                if(arvore->dir!=NULL)
-                    arvore = arvore->dir;
+                if(arvore->getDir()!=NULL)
+                    arvore = arvore->getDir();
                 else
-                    arvore = arvore->esq;
+                    arvore = arvore->getEsq();
                 delete temp;
             }
         }
@@ -95,11 +95,11 @@ void arvorebb::imprimeAll(){
     imprimeAllR(raiz);
 }
 
-void arvorebb::imprimeAllR(no2old *no){
+void arvorebb::imprimeAllR(no2 *no){
     if(no!=NULL){
         cout << no->getInfo() << endl;
-        imprimeAllR(no->esq);
-        imprimeAllR(no->dir);
+        imprimeAllR(no->getEsq());
+        imprimeAllR(no->getDir());
     } else
         cout << "no nulo" << endl;
 }
