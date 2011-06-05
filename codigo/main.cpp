@@ -22,9 +22,7 @@ Junho de 2011
 #include <iostream>
 
 #include "elemento.h"
-//#include "no1old.h"
 #include "no1.h"
-//#include "no2old.h"
 #include "no2.h"
 #include "filaS.h"
 //#include "lista_simples.h"
@@ -181,21 +179,13 @@ int main()
 	if(n2_0.getEsq()->getInfo() == e0)
 		cout << "ok" << endl;
 	
-	////////////////////////////////////////////////
-	//
-	// 3. classe no2old
-	//
-	//
-/*
-	titulo("classe no2old");
+    no2 meuno2;
+    meuno2.setInfo(720);
+    meuno2.setDir(&meuno2);
+    meuno2.setEsq(&meuno2);
+    cout << meuno2.getInfo() << endl;
+    cout << meuno2.getDir(0)->getInfo() << endl;
 
-    no2old meuno2;
-    meuno2.info = 720;
-    meuno2.dir = &meuno2;
-    meuno2.esq = &meuno2;
-    cout << meuno2.info << endl;
-    cout << meuno2.dir->info << endl;
-*/
 	////////////////////////////////////////////////
 	//
 	// 4. classe fila
@@ -204,21 +194,21 @@ int main()
 
 	titulo("classe fila");
 
-cout<<"-----------" <<endl;
-filaS afila(3);
+	cout<<"-----------" <<endl;
+	filaS afila(3);
 
-elemento f1,f2,f3,f;
-bool okb;
-f1=11; f2=12; f3=13; f=111;
-afila.entra(f3,okb);
-afila.entra(f2,okb);
-afila.entra(f1,okb);
-afila.entra(f,okb);
-afila.sai(f,okb);
-afila.sai(f,okb);
-afila.sai(f,okb);
-cout << f <<endl;
-cout<<"-----------" <<endl;
+	elemento f1,f2,f3,f;
+	bool okb;
+	f1=11; f2=12; f3=13; f=111;
+	afila.entra(f3,okb);
+	afila.entra(f2,okb);
+	afila.entra(f1,okb);
+	afila.entra(f,okb);
+	afila.sai(f,okb);
+	afila.sai(f,okb);
+	afila.sai(f,okb);
+	cout << f <<endl;
+	cout<<"-----------" <<endl;
 
 
     cout << endl << "Testing fila!" << endl;
