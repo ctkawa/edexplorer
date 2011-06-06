@@ -32,8 +32,9 @@ void lista_simples::insereElemento(int ele){
              if (ptrPrimeiro == NULL){
                ptrPrimeiro = new no1;
                ptrPrimeiro->setInfo(ele);
-             }else
-               no1 *ptrUltimo, *ptrAux;
+             }else{
+               no1 *ptrUltimo;
+               no1 *ptrAux;
                ptrUltimo = ptrPrimeiro;
                while(ptrUltimo->getNext() != NULL)
                  ptrUltimo = ptrUltimo->getNext();
@@ -42,26 +43,30 @@ void lista_simples::insereElemento(int ele){
                ptrAux->setNext(NULL);
                ptrUltimo->setNext(ptrAux);
              }
+             }
              
 bool lista_simples::removeElemento(int ele){
+             no1 *ptrAux;
+             no1 *ptrAuxAnterior;
              if(ptrPrimeiro == NULL)
                return false;
              else
-               if (ptrPrimeiro->getNext == NULL)
+               if (ptrPrimeiro->getNext() == NULL)
                  if(ptrPrimeiro->getInfo() == ele){
                    delete [] ptrPrimeiro;
                    ptrPrimeiro = NULL;
                    return true;
                  }
-                 else   
-                 no1 *ptrAux, *ptrAuxAnterior;
-                 ptrAux = ptrPrimeiro;
-                 ptrAuxAnterior = NULL;
-                 while(ptrAux->getInfo() != ele && ptrAux->getNext() != NULL){
-                   ptrAuxAnterior = ptrAux;
-                   ptrAux = ptrAux->getNext();
+                 else{   
+                   ptrAux = ptrPrimeiro;
+                   ptrAuxAnterior = NULL;
+                   //while((ptrAux->getInfo() !=ele) && (ptrAux->getNext()!=NULL)){
+                   while(ptrAux->getInfo() = ele){
+                     ptrAuxAnterior = ptrAux;
+                     ptrAux = ptrAux->getNext();
+                   }
                  }
-                 if(ptrAux->getInfo() = ele){
+                 if(ptrAux->getInfo() == ele){
                    ptrAuxAnterior->setNext(ptrAux->getNext());
                    delete [] ptrAux;
                    return true;
