@@ -11,8 +11,8 @@ class lista_simples
         virtual ~lista_simples();
         bool estaNaLista(elemento);
         bool vazia();
-        void insereElemento(int);
-        bool removeElemento(int);
+        void insereElemento(elemento);
+        bool removeElemento(elemento);
     protected:
     private:
         no1 *ptrPrimeiro;

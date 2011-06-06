@@ -28,7 +28,7 @@ bool lista_simples::vazia(){
          return false;
         
      }
-void lista_simples::insereElemento(int ele){
+void lista_simples::insereElemento(elemento ele){
              if (ptrPrimeiro == NULL){
                ptrPrimeiro = new no1;
                ptrPrimeiro->setInfo(ele);
@@ -45,7 +45,7 @@ void lista_simples::insereElemento(int ele){
              }
              }
              
-bool lista_simples::removeElemento(int ele){
+bool lista_simples::removeElemento(elemento ele){
              no1 *ptrAux;
              no1 *ptrAuxAnterior;
              if(ptrPrimeiro == NULL)
