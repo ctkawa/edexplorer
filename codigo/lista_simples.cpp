@@ -28,7 +28,7 @@ bool lista_simples::vazia(){
          return false;
         
      }
-        void insereElemento(int ele){
+void lista_simples::insereElemento(int ele){
              if (ptrPrimeiro == NULL){
                ptrPrimeiro = new no1;
                ptrPrimeiro->setInfo(ele);
@@ -43,7 +43,7 @@ bool lista_simples::vazia(){
                ptrUltimo->setNext(ptrAux);
              }
              
-        bool removeElemento(lista_simples L1, elemento ele){
+bool lista_simples::removeElemento(int ele){
              if(ptrPrimeiro == NULL)
                return false;
              else
@@ -62,7 +62,7 @@ bool lista_simples::vazia(){
                    ptrAux = ptrAux->getNext();
                  }
                  if(ptrAux->getInfo() = ele){
-                   ptrAuxAnterior->setNext(ptrAux.getNext());
+                   ptrAuxAnterior->setNext(ptrAux->getNext());
                    delete [] ptrAux;
                    return true;
                  }
