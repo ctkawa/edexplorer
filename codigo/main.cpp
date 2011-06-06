@@ -114,7 +114,7 @@ int main()
 	node0.setNext(pnode2);
 	if(node0.getNext()->getInfo() == e0)
 		cout << "ok" << endl;
-	
+
     no1 meuno[3], *noPtr;
     meuno[0].setInfo(10);
     meuno[1].setInfo(11);
@@ -144,26 +144,26 @@ int main()
 	// 3. classe no2
 	//
 	//
-	
+
 	titulo("classe no2");
-	
+
 	cout << "Construtor sem argumento: ";
 	no2 n2_0;
 	cout << "ok" << endl;
-	
+
 	cout << "Construtor com argumento: ";
 	e0.setValor(100);
 	no2 n2_1(e0);
 	if(n2_1.getInfo() == e0)
 		cout << "ok" << endl;
-	
+
 	cout << "GET e SET info: ";
 	e0.setValor(99);
 	n2_1.setInfo(e0);
 	if(n2_1.getInfo() == e0)
 		cout << "ok" << endl;
-	
-	
+
+
 	cout << "GET e SET dir: ";
 	e0.setValor(5);
 	no2* pn2_2 = new no2();
@@ -171,14 +171,14 @@ int main()
 	n2_0.setDir(pn2_2);
 	if(n2_0.getDir()->getInfo() == e0)
 		cout << "ok" << endl;
-	
+
 	cout << "GET e SET esq: ";
 	e0.setValor(6);
 	pn2_2->setInfo(e0);
 	n2_0.setEsq(pn2_2);
 	if(n2_0.getEsq()->getInfo() == e0)
 		cout << "ok" << endl;
-	
+
     no2 meuno2;
     meuno2.setInfo(720);
     meuno2.setDir(&meuno2);
@@ -273,14 +273,38 @@ int main()
 	//
 
 	titulo("classe arvore");
-    arvorebb meuArvore;
+    arvorebb meuArvore, meuA2;
     for(int i=0;i<10;i++){
         ele = i;
         if(!meuArvore.insere(ele))
             cout << "Erro na insercao de " << ele << endl;
-        cout << "raiz: " << meuArvore.getRaiz() << endl;
+        //cout << "raiz: " << meuArvore.getRaiz() << endl;
     }
     meuArvore.imprimeAll();
+
+
+cout <<endl<<endl;
+    ele = 10;
+    meuA2.insere(ele);
+    ele = 5;
+    meuA2.insere(ele);
+    ele = 15;
+    meuA2.insere(ele);
+    ele = 1;
+    meuA2.insere(ele);
+    ele = 7;
+    meuA2.insere(ele);
+    ele = 12;
+    meuA2.insere(ele);
+    ele = 18;
+    meuA2.insere(ele);
+    cout << "Árvore com nós com 2 descendentes : " << endl;
+    meuA2.imprimeAll();
+
+cout <<endl<<endl;
+    cout << "Árvore copiada do anterior: " << endl;
+    arvorebb meuA3(meuA2);
+    meuA3.imprimeAll();
 
     return 0;
 }

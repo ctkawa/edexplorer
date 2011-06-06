@@ -4,11 +4,31 @@
 arvorebb::arvorebb(){
     raiz = NULL;
 }
-arvorebb::arvorebb(const arvorebb &e){
+arvorebb::arvorebb(const arvorebb &arv){
+    raiz = NULL;
+    copiaR(arv.raiz);
+}
+void arvorebb::copiaR(no2 * const &arv){
+    if(arv != NULL){
+        elemento ele;
+        ele = arv->getInfo();
+        insere(ele);
+        copiaR(arv->getDir());
+        copiaR(arv->getEsq());
+    }
 }
 
 arvorebb::~arvorebb(){
-
+    //cout << "destruindo ABB"<<endl;
+    bool ok;
+    elemento e;
+    while(!vazia()){
+            e = remover(raiz, ok);
+            //cout << "abb, removido: " << e << " ok=" << ok << endl;
+            if(!ok)
+                cout << "erro na destrução de árvore." << endl;
+    }
+//cout << "FIM destrutor ABB" << endl;
 }
 
 bool arvorebb::vazia(){
@@ -38,23 +58,26 @@ bool arvorebb::insere(elemento &e){
 }
 
 bool arvorebb::insereR(elemento &e, no2 *&no){  //referencia de ponteiro
-    cout << "inserindo " << e << " para " << no << endl;
+    //cout << "inserindo " << e << " para " << no << endl;
     if(no == NULL){
         no = new no2;
         no->setInfo(e);
-        cout << "INSERIDO EM: " << no << endl << "raiz:" << raiz<< endl;
+        //cout << "INSERIDO EM: " << no << endl << "raiz:" << raiz<< endl;
         return true;
-    } else if(no->getInfo() < e){
+    } else if(no->getInfo() > e){
         no2 *temp;
         temp = no->getEsq();
-        insereR(e, temp);
-        no->setEsq(temp);
-        ;
+        bool result = insereR(e, temp);
+        if(result)
+            no->setEsq(temp);
+        return result;
     }else{
         no2 *temp;
         temp = no->getDir();
-        insereR(e, temp);
-        no->setDir(temp);
+        bool result = insereR(e, temp);
+        if(result)
+            no->setDir(temp);
+        return result;
         //return insereR(e, no->getDir());
         ;
     }
@@ -62,9 +85,11 @@ bool arvorebb::insereR(elemento &e, no2 *&no){  //referencia de ponteiro
 }
 
 elemento &arvorebb::remover(no2 *no, bool &ok){
+    //cout << "REMOVER" << endl;
     return removerR(raiz, no, ok);
 }
-elemento &arvorebb::removerR(no2 *arvore, no2 *no, bool &ok){
+elemento &arvorebb::removerR(no2 *&arvore, no2 *no, bool &ok){
+    //cout << "removerR"<< endl;
     if(arvore==NULL){
         ok = false;
         elemento e;
@@ -72,6 +97,7 @@ elemento &arvorebb::removerR(no2 *arvore, no2 *no, bool &ok){
     } else {
         if(arvore == no){
             if(arvore->getDir()==NULL && arvore->getEsq() == NULL){ //no sem descendente
+                //cout << "removendo "<< arvore << " sem descendente"<<endl;
                 elemento ele;
                 ele = arvore->getInfo();
                 delete arvore;
@@ -80,17 +106,37 @@ elemento &arvorebb::removerR(no2 *arvore, no2 *no, bool &ok){
                 return ele;
             } else if(arvore->getDir()!=NULL && arvore->getEsq() != NULL){ // no com 2 descendentes
                 //Inserir direita em direita (maior) da esquerda
+                elemento ele = arvore->getInfo();
+                //cout << "removendo " << arvore << " com descendentes Dir: " << arvore->getDir() << " e Esq: " << arvore->getEsq();
                 maior(arvore->getEsq())->setDir(arvore->getDir());
                 arvore->setDir(NULL);
+                no2 *temp = arvore;
+                arvore = arvore->getEsq();
+                //cout << " temp:"<<temp;
+                delete temp;
+                //cout << "        Removido!" << endl;
+                ok = true;
+                return ele;
             } else { // no com um descendente
                 no2 *temp;
                 temp = arvore;
-                if(arvore->getDir()!=NULL)
+                elemento ele;
+                if(arvore->getDir()!=NULL){
                     arvore = arvore->getDir();
-                else
+                    //cout << "recebeu dir: " << temp << " <= " << arvore->getDir() << endl;
+                } else{
                     arvore = arvore->getEsq();
+                    //cout << "recebeu esq: "<< temp  << " <= " << arvore->getEsq() << endl;
+                }
+                //cout << "FLAG deletando:"<< arvore << " " << arvore->getDir() << " "<< arvore->getEsq()<< endl;
+                ele = arvore->getInfo();
                 delete temp;
+                //cout << "FLAG 2"<< endl;
+                ok = true;
+                return ele;
             }
+        } else {
+
         }
     }
 }
@@ -117,8 +163,8 @@ void arvorebb::imprimeAll(){
 
 void arvorebb::imprimeAllR(no2 *no){
     if(no!=NULL){
-        cout << no->getInfo() << endl;
         imprimeAllR(no->getEsq());
+        cout << no << " possui " << no->getInfo() << ", Dir=" << no->getDir() << ", Esq=" << no->getEsq() << endl;
         imprimeAllR(no->getDir());
     } else
         //cout << "no nulo" << endl;
