@@ -1,42 +1,40 @@
-// Fila ESTATICA
 
+#include "fila.h"
 
-#include "filaS.h"
-
-filaS::filaS()
+fila::fila()
 {
     tamanhoAtual = 0;
     tamanhoMaximo = 10;
     elemento filaEle[tamanhoMaximo];
 }
-filaS::~filaS()
+fila::~fila()
 {
 }
-filaS::filaS(int t){
+fila::fila(int t){
     tamanhoAtual = 0;
     tamanhoMaximo = t;
     elemento filaEle[tamanhoMaximo];
 }
 
-int filaS::getTamanoAtual(){
+int fila::getTamanoAtual(){
     return tamanhoAtual;
 }
-int filaS::getTamanoMaximo(){
+int fila::getTamanoMaximo(){
     return tamanhoMaximo;
 }
 
-bool filaS::vazia(){
+bool fila::vazia(){
     if(tamanhoAtual>0)
         return false;
     return true;
 }
-bool filaS::cheia(){
+bool fila::cheia(){
     if(tamanhoAtual < tamanhoMaximo)
         return false;
     return true;
 }
 
-void filaS::entra(elemento&ele, bool&ok){
+void fila::entra(elemento&ele, bool&ok){
     ok = false;
     if (tamanhoAtual < tamanhoMaximo){
         filaEle[tamanhoAtual] = ele;
@@ -46,7 +44,7 @@ void filaS::entra(elemento&ele, bool&ok){
     return;
 }
 
-void filaS::sai(elemento& ele, bool& ok){
+void fila::sai(elemento& ele, bool& ok){
     ok=false;
     if(tamanhoAtual>0){
         tamanhoAtual--;             // decremento, aproveitando para correcao de index na recuperacao

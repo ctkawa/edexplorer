@@ -24,7 +24,7 @@ Junho de 2011
 #include "elemento.h"
 #include "no1.h"
 #include "no2.h"
-#include "filaS.h"
+#include "fila.h"
 //#include "lista_simples.h"
 #include "lista_avancada.h"
 #include "arvorebb.h"
@@ -114,7 +114,7 @@ int main()
 	node0.setNext(pnode2);
 	if(node0.getNext()->getInfo() == e0)
 		cout << "ok" << endl;
-
+	
     no1 meuno[3], *noPtr;
     meuno[0].setInfo(10);
     meuno[1].setInfo(11);
@@ -122,7 +122,6 @@ int main()
     meuno[0].setNext(&meuno[1]);
     meuno[1].setNext(&meuno[2]);
     meuno[2].setNext(&meuno[0]);
-
 
     cout << "meuno[0].getInfo() = " << meuno[0].getInfo() << " / at = " << meuno[0].getNext() << endl;
     cout << "meuno[1].getInfo() = " << meuno[1].getInfo() << " / at = " << meuno[1].getNext()  << endl;
@@ -145,26 +144,26 @@ int main()
 	// 3. classe no2
 	//
 	//
-
+	
 	titulo("classe no2");
-
+	
 	cout << "Construtor sem argumento: ";
 	no2 n2_0;
 	cout << "ok" << endl;
-
+	
 	cout << "Construtor com argumento: ";
 	e0.setValor(100);
 	no2 n2_1(e0);
 	if(n2_1.getInfo() == e0)
 		cout << "ok" << endl;
-
+	
 	cout << "GET e SET info: ";
 	e0.setValor(99);
 	n2_1.setInfo(e0);
 	if(n2_1.getInfo() == e0)
 		cout << "ok" << endl;
-
-
+	
+	
 	cout << "GET e SET dir: ";
 	e0.setValor(5);
 	no2* pn2_2 = new no2();
@@ -172,14 +171,14 @@ int main()
 	n2_0.setDir(pn2_2);
 	if(n2_0.getDir()->getInfo() == e0)
 		cout << "ok" << endl;
-
+	
 	cout << "GET e SET esq: ";
 	e0.setValor(6);
 	pn2_2->setInfo(e0);
 	n2_0.setEsq(pn2_2);
 	if(n2_0.getEsq()->getInfo() == e0)
 		cout << "ok" << endl;
-
+	
     no2 meuno2;
     meuno2.setInfo(720);
     meuno2.setDir(&meuno2);
@@ -196,7 +195,7 @@ int main()
 	titulo("classe fila");
 
 	cout<<"-----------" <<endl;
-	filaS afila(3);
+	fila afila(3);
 
 	elemento f1,f2,f3,f;
 	bool okb;
@@ -211,8 +210,6 @@ int main()
 	cout << f <<endl;
 	cout<<"-----------" <<endl;
 
-
-    cout << endl << "Testing fila!" << endl;
     elemento cambada[10], ele;
     bool ok;
     cambada[0] = 3; cambada[1] = 13;
@@ -220,7 +217,7 @@ int main()
     cambada[4] = 4; cambada[5] = 8;
     cambada[6] = 7; cambada[7] = 5;
     cambada[8] = 1; cambada[9] = 9;
-    filaS minhafila(4);
+    fila minhafila(4);
     cout << "entrando: " << cambada[3];
          minhafila.entra(cambada[3], ok);
                cout << "  Result:" << ok << endl;
@@ -254,12 +251,10 @@ int main()
 	//
 	//
 
-	titulo("classe lista_avancada_old");
-
+	titulo("classe lista_avancada");
 
     lista_avancada minhaListaA;
 //    elemento ele;
-
 
     cout << "inserindo sequencia de 0 a 9, sempre a esquerda de Header."<<endl;
     for(int i=0;i<10;i++){
@@ -276,25 +271,16 @@ int main()
 	// 7. classe arvore
 	//
 	//
-//    elemento ele;
+
 	titulo("classe arvore");
     arvorebb meuArvore;
-    meuArvore.imprimeAll();
-    cout << "inserindo 15" << endl;
-    ele = 15;
-    meuArvore.insere(ele);
-    ele = 16;
-    meuArvore.insere(ele);
-    ele = 14;
-    meuArvore.insere(ele);
-    meuArvore.imprimeAll();
-
-    /*for(int i=0;i<10;i++){
+    for(int i=0;i<10;i++){
         ele = i;
         if(!meuArvore.insere(ele))
             cout << "Erro na insercao de " << ele << endl;
+        cout << "raiz: " << meuArvore.getRaiz() << endl;
     }
-    meuArvore.imprimeAll();*/
+    meuArvore.imprimeAll();
 
     return 0;
 }
