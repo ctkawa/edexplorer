@@ -14,7 +14,7 @@ bool lista_simples::estaNaLista(elemento ele){
      else{
        ptrAux = ptrPrimeiro;
        while(ptrAux != NULL)
-         if(ptrAux.getInfo() == ele){
+         if(ptrAux->getInfo() == ele){
            return true;                          
          }
      }
@@ -31,24 +31,24 @@ bool lista_simples::vazia(){
         void insereElemento(int ele){
              if (ptrPrimeiro == NULL){
                ptrPrimeiro = new no1;
-               ptrPrimeiro.setInfo(ele);
+               ptrPrimeiro->setInfo(ele);
              }else
                no1 *ptrUltimo, *ptrAux;
                ptrUltimo = ptrPrimeiro;
-               while(ptrUltimo.getNext() != NULL)
-                 ptrUltimo = ptrUltimo.getNext();
-               ptrAux = new no;
-               ptrAux.setInfo(ele);
-               ptrAux.setNext(NULL);
-               ptrUltimo.setNext(ptrAux);
+               while(ptrUltimo->getNext() != NULL)
+                 ptrUltimo = ptrUltimo->getNext();
+               ptrAux = new no1;
+               ptrAux->setInfo(ele);
+               ptrAux->setNext(NULL);
+               ptrUltimo->setNext(ptrAux);
              }
              
         bool removeElemento(lista_simples L1, elemento ele){
              if(ptrPrimeiro == NULL)
                return false;
              else
-               if (ptrPrimeiro.getNext == NULL)
-                 if(ptrPrimeiro.getInfo() == ele){
+               if (ptrPrimeiro->getNext == NULL)
+                 if(ptrPrimeiro->getInfo() == ele){
                    delete [] ptrPrimeiro;
                    ptrPrimeiro = NULL;
                    return true;
@@ -57,12 +57,12 @@ bool lista_simples::vazia(){
                  no1 *ptrAux, *ptrAuxAnterior;
                  ptrAux = ptrPrimeiro;
                  ptrAuxAnterior = NULL;
-                 while(ptrAux.getInfo() != ele && ptrAux.getNext() != NULL){
+                 while(ptrAux->getInfo() != ele && ptrAux->getNext() != NULL){
                    ptrAuxAnterior = ptrAux;
-                   ptrAux = ptrAux.getNext();
+                   ptrAux = ptrAux->getNext();
                  }
-                 if(ptrAux.getInfo() = ele){
-                   ptrAuxAnterior.setNext(ptrAux.getNext());
+                 if(ptrAux->getInfo() = ele){
+                   ptrAuxAnterior->setNext(ptrAux.getNext());
                    delete [] ptrAux;
                    return true;
                  }
