@@ -33,7 +33,6 @@ class lista_avancada
     private:
         int tamanhoAtual;
         no2 header;
-
 };
 
 #endif

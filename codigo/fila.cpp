@@ -10,6 +10,7 @@ fila::fila()
 
 fila::~fila()
 {
+    delete filaEle;
 }
 
 fila::fila(int t){
