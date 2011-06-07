@@ -252,19 +252,31 @@ int main()
 	int i;
 	
 	for(i=0; i<=10; i++){
-		e0.setValor(5);
+		e0.setValor(i);
 		lista.insereElemento(e0);
 	}
 	
 	lista.printAll();
 	
-	for(i=0; i<10; i+=2){
-		e0.setValor(i);
-		lista.removeElemento(e0);
-	}
+ 	for(i=0; i<=10; i+=2){
+ 		e0.setValor(i);
+ 		lista.removeElemento(e0);
+ 	}
 	
 	lista.printAll();
 
+	e0.setValor(9);
+	if(lista.estaNaLista(e0))
+		cout << "9 está na lista" << endl;
+	else
+		cout << "9 não está na lista" << endl;
+	
+	e0.setValor(0);
+	if(lista.estaNaLista(e0))
+		cout << "0 está na lista" << endl;
+	else
+		cout << "0 não está na lista" << endl;
+	
 	////////////////////////////////////////////////
 	//
 	// 6. classe lista_avancada

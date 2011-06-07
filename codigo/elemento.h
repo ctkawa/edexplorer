@@ -21,6 +21,7 @@ class elemento
 		void setValor(int);
 		int getValor() const;
 		bool operator==(elemento const &);
+		bool operator!=(elemento const &);
 		elemento& operator=(int);
 		bool operator<(elemento const &);
 		bool operator>(elemento const &);

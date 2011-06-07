@@ -33,6 +33,11 @@ bool elemento::operator==(elemento const &esq){
 	return (valor == esq.valor);
 };
 
+
+bool elemento::operator!=(elemento const &esq){
+	return (valor != esq.valor);
+};
+
 elemento& elemento::operator=(int esq){
 	valor = esq;
 	return *this;

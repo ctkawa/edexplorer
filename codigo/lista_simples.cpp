@@ -22,7 +22,8 @@ bool lista_simples::estaNaLista(elemento ele){
 	while(ptrAux != NULL)
 		if(ptrAux->getInfo() == ele){
 		return true;                          
-		}
+		} else
+			ptrAux = ptrAux->getNext();
 	}
 	return false;
 }
@@ -57,25 +58,24 @@ bool lista_simples::removeElemento(elemento ele){
 	if(ptrPrimeiro == NULL)
 		return false;
 	else {
-		if (ptrPrimeiro->getNext() == NULL) {
-			if(ptrPrimeiro->getInfo() == ele){
-				delete ptrPrimeiro;
-				ptrPrimeiro = NULL;
-				return true;
-			} else {
-				ptrAux = ptrPrimeiro;
-				ptrAuxAnterior = NULL;
-				while((ptrAux->getInfo().getValor() != ele.getValor()) && (ptrAux->getNext()!=NULL)){
-					ptrAuxAnterior = ptrAux;
-					ptrAux = ptrAux->getNext();
-				}
+		if(ptrPrimeiro->getInfo() == ele){
+			ptrAux = ptrPrimeiro->getNext();
+			delete ptrPrimeiro;
+			ptrPrimeiro = ptrAux;;
+			return true;
+		} else {
+			ptrAux = ptrPrimeiro;
+			ptrAuxAnterior = NULL;
+			while((ptrAux->getInfo() != ele) && (ptrAux->getNext()!=NULL)){
+				ptrAuxAnterior = ptrAux;
+				ptrAux = ptrAux->getNext();
 			}
-		}
+ 		}
 	}
 	
 	if(ptrAux->getInfo() == ele){
 		ptrAuxAnterior->setNext(ptrAux->getNext());
-		delete [] ptrAux;
+		delete ptrAux;
 		return true;
 	}
 	
