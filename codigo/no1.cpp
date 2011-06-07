@@ -9,10 +9,6 @@ no1::no1(elemento e){
     next = NULL;
 }
 
-no1::~no1(){
-    
-}
-
 elemento no1::getInfo(){
 	return info;
 }

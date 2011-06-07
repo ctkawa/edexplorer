@@ -13,8 +13,6 @@ class no2
 		no2();
 		no2(elemento);
 		no2(const no2&);
-		virtual ~no2();
-
 		elemento getInfo();
 		void setInfo(elemento);
 		no2* getDir();

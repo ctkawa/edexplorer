@@ -84,29 +84,27 @@ bool arvorebb::insereR(elemento &e, no2 *&no){  //referencia de ponteiro
     return false;
 }
 
-elemento &arvorebb::remover(no2 *no, bool &ok){
+elemento arvorebb::remover(no2 *no, bool &ok){
     //cout << "REMOVER" << endl;
     return removerR(raiz, no, ok);
 }
-elemento &arvorebb::removerR(no2 *&arvore, no2 *no, bool &ok){
+elemento arvorebb::removerR(no2 *&arvore, no2 *no, bool &ok){
     //cout << "removerR"<< endl;
+	elemento ele;
+	
     if(arvore==NULL){
         ok = false;
-        elemento e;
-        return e;
     } else {
         if(arvore == no){
             if(arvore->getDir()==NULL && arvore->getEsq() == NULL){ //no sem descendente
                 //cout << "removendo "<< arvore << " sem descendente"<<endl;
-                elemento ele;
                 ele = arvore->getInfo();
                 delete arvore;
                 arvore = NULL;
                 ok = true;
-                return ele;
             } else if(arvore->getDir()!=NULL && arvore->getEsq() != NULL){ // no com 2 descendentes
                 //Inserir direita em direita (maior) da esquerda
-                elemento ele = arvore->getInfo();
+                ele = arvore->getInfo();
                 //cout << "removendo " << arvore << " com descendentes Dir: " << arvore->getDir() << " e Esq: " << arvore->getEsq();
                 maior(arvore->getEsq())->setDir(arvore->getDir());
                 arvore->setDir(NULL);
@@ -116,11 +114,9 @@ elemento &arvorebb::removerR(no2 *&arvore, no2 *no, bool &ok){
                 delete temp;
                 //cout << "        Removido!" << endl;
                 ok = true;
-                return ele;
             } else { // no com um descendente
                 no2 *temp;
                 temp = arvore;
-                elemento ele;
                 if(arvore->getDir()!=NULL){
                     arvore = arvore->getDir();
                     //cout << "recebeu dir: " << temp << " <= " << arvore->getDir() << endl;
@@ -133,12 +129,11 @@ elemento &arvorebb::removerR(no2 *&arvore, no2 *no, bool &ok){
                 delete temp;
                 //cout << "FLAG 2"<< endl;
                 ok = true;
-                return ele;
             }
-        } else {
-
         }
     }
+    
+    return ele;
 }
 
 no2* arvorebb::maior(no2 *raiz){

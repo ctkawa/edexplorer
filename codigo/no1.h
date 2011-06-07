@@ -10,7 +10,6 @@ class no1
 	public:
 		no1();
 		no1(elemento);
-		virtual ~no1();
 		elemento getInfo();
 		void setInfo(elemento);
 		no1* getNext();

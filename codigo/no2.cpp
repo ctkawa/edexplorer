@@ -10,10 +10,6 @@ no2::no2(elemento e){
 	info = e;
 }
 
-no2::~no2(){
-
-}
-
 no2::no2(const no2 &original){
     info = original.info;
     dir = original.dir;

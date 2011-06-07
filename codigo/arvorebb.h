@@ -13,7 +13,7 @@ class arvorebb
         bool vazia();
         bool estaNaArvore(elemento &);
         bool insere(elemento &);
-        elemento &remover(no2 *, bool &);
+        elemento remover(no2 *, bool &);
 
         void imprimeAll();
 
@@ -23,7 +23,7 @@ class arvorebb
         void copiaR( no2 * const &);
         bool estaNaArvoreR(elemento &, no2 *);
         bool insereR(elemento &, no2 *&);
-        elemento &removerR(no2*&, no2 *, bool &);
+        elemento removerR(no2*&, no2 *, bool &);
         no2* maior(no2 *);
         void imprimeAllR(no2*);
 };

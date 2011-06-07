@@ -20,7 +20,7 @@ class fila
     private:
         int tamanhoAtual;
         int tamanhoMaximo;
-        elemento filaEle[];
+        elemento * filaEle;
 };
 
 #endif // FILA_H
