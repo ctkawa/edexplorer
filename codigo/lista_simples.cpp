@@ -5,7 +5,12 @@ lista_simples::lista_simples(){
 }
 
 lista_simples::~lista_simples(){
-	
+	no1* ptrAux;
+	while(ptrPrimeiro != NULL){
+		ptrAux = ptrPrimeiro;
+		ptrPrimeiro = ptrPrimeiro->getNext();
+		delete ptrAux;
+	}
 }
 
 bool lista_simples::estaNaLista(elemento ele){
@@ -54,7 +59,7 @@ bool lista_simples::removeElemento(elemento ele){
 	else {
 		if (ptrPrimeiro->getNext() == NULL) {
 			if(ptrPrimeiro->getInfo() == ele){
-				delete [] ptrPrimeiro;
+				delete ptrPrimeiro;
 				ptrPrimeiro = NULL;
 				return true;
 			} else {
@@ -76,9 +81,14 @@ bool lista_simples::removeElemento(elemento ele){
 	
 	return false;
 }
-	
-	
-	
-	
-	
+
+void lista_simples::printAll(){
+	no1* no = ptrPrimeiro;
+	cout << no->getInfo() << " ";
+	while(no->getNext() != NULL){
+		no = no->getNext();
+		cout << no->getInfo() << " ";
+	}
+	cout << endl;
+}
 	

@@ -25,7 +25,7 @@ Junho de 2011
 #include "no1.h"
 #include "no2.h"
 #include "fila.h"
-//#include "lista_simples.h"
+#include "lista_simples.h"
 #include "lista_avancada.h"
 #include "arvorebb.h"
 
@@ -186,6 +186,8 @@ int main()
     cout << meuno2.getInfo() << endl;
     cout << meuno2.getDir()->getInfo() << endl;
 
+	delete pn2_2;
+	
 	////////////////////////////////////////////////
 	//
 	// 4. classe fila
@@ -245,6 +247,24 @@ int main()
 
 	titulo("classe lista_simples");
 
+	lista_simples lista;
+	
+	int i;
+	
+	for(i=0; i<=10; i++){
+		e0.setValor(5);
+		lista.insereElemento(e0);
+	}
+	
+	lista.printAll();
+	
+	for(i=0; i<10; i+=2){
+		e0.setValor(i);
+		lista.removeElemento(e0);
+	}
+	
+	lista.printAll();
+
 	////////////////////////////////////////////////
 	//
 	// 6. classe lista_avancada
@@ -283,7 +303,7 @@ int main()
     meuArvore.imprimeAll();
 
 
-cout <<endl<<endl;
+	cout <<endl<<endl;
     ele = 10;
     meuA2.insere(ele);
     ele = 5;
@@ -301,7 +321,7 @@ cout <<endl<<endl;
     cout << "Árvore com nós com 2 descendentes : " << endl;
     meuA2.imprimeAll();
 
-cout <<endl<<endl;
+	cout <<endl<<endl;
     cout << "Árvore copiada do anterior: " << endl;
     arvorebb meuA3(meuA2);
     meuA3.imprimeAll();

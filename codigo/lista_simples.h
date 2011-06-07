@@ -6,6 +6,7 @@
 using namespace std;
 class lista_simples
 {
+	
     public:
         lista_simples();
         virtual ~lista_simples();
@@ -13,6 +14,7 @@ class lista_simples
         bool vazia();
         void insereElemento(elemento);
         bool removeElemento(elemento);
+		void printAll();
 	
     protected:
     private:
