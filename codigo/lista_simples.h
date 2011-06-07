@@ -13,6 +13,7 @@ class lista_simples
         bool vazia();
         void insereElemento(elemento);
         bool removeElemento(elemento);
+	
     protected:
     private:
         no1 *ptrPrimeiro;

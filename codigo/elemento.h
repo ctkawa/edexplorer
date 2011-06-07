@@ -19,7 +19,7 @@ class elemento
 		elemento(const elemento&);
 		virtual ~elemento();
 		void setValor(int);
-		int getValor();
+		int getValor() const;
 		bool operator==(elemento const &);
 		elemento& operator=(int);
 		bool operator<(elemento const &);

@@ -25,7 +25,7 @@ void elemento::setValor(int v){
     valor = v;
 }
 
-int elemento::getValor(){
+int elemento::getValor() const{
     return valor;
 }
 
@@ -50,3 +50,6 @@ bool elemento::operator<(elemento const &esq){
 bool elemento::operator>(elemento const &esq){
 	return (valor > esq.valor);
 };
+
+
+

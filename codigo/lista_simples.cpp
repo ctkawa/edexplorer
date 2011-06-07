@@ -60,8 +60,7 @@ bool lista_simples::removeElemento(elemento ele){
                  else{   
                    ptrAux = ptrPrimeiro;
                    ptrAuxAnterior = NULL;
-                   //while((ptrAux->getInfo() !=ele) && (ptrAux->getNext()!=NULL)){
-                   while(ptrAux->getInfo() = ele){
+                   while((ptrAux->getInfo().getValor() != ele.getValor()) && (ptrAux->getNext()!=NULL)){
                      ptrAuxAnterior = ptrAux;
                      ptrAux = ptrAux->getNext();
                    }
