@@ -300,7 +300,7 @@ int main()
     minhaListaA.printAll();
 
     //bool ok;
-    cout << "Deletando tudo"<<endl;
+    cout << "Deletando tudo, 11 vezes para dar um erro:"<<endl;
     for(int i=1;i<=11;i++){
         minhaListaA.retirar(minhaListaA.getPtrHeader()->getDir(),ok);
         if(!ok)
@@ -326,7 +326,7 @@ int main()
 	//
 
 	titulo("classe arvore");
-	
+
     arvorebb meuArvore, meuA2;
     for(int i=0;i<10;i++){
         ele = i;
@@ -360,5 +360,8 @@ int main()
     arvorebb meuA3(meuA2);
     meuA3.imprimeAll();
 
+
+    cout <<endl<<endl;
+    cout << "FIM"<<endl;
     return 0;
 }
