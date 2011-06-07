@@ -59,6 +59,7 @@ void lista_avancada::retirar(no2 *noRetir, bool &ok){
             ptr->getEsq()->setDir(ptr->getDir());
             delete ptr;
             ok = true;
+            tamanhoAtual --;
             return;
         }
         ptr = ptr->getDir();
@@ -78,6 +79,7 @@ void lista_avancada::retirar(elemento& ele, bool& ok){
                 ptr->getEsq()->setDir(ptr->getDir());
                 delete ptr;
                 ok = true;
+                tamanhoAtual--;
                 return;
             }
             ptr = ptr->getDir();
