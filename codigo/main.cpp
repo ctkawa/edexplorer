@@ -305,6 +305,7 @@ int main()
 	//
 
 	titulo("classe arvore");
+	
     arvorebb meuArvore, meuA2;
     for(int i=0;i<10;i++){
         ele = i;
