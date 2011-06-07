@@ -187,7 +187,7 @@ int main()
     cout << meuno2.getDir()->getInfo() << endl;
 
 	delete pn2_2;
-	
+
 	////////////////////////////////////////////////
 	//
 	// 4. classe fila
@@ -248,21 +248,21 @@ int main()
 	titulo("classe lista_simples");
 
 	lista_simples lista;
-	
+
 	int i;
-	
+
 	for(i=0; i<=10; i++){
 		e0.setValor(i);
 		lista.insereElemento(e0);
 	}
-	
+
 	lista.printAll();
-	
+
  	for(i=0; i<=10; i+=2){
  		e0.setValor(i);
  		lista.removeElemento(e0);
  	}
-	
+
 	lista.printAll();
 
 	e0.setValor(9);
@@ -270,13 +270,14 @@ int main()
 		cout << "9 está na lista" << endl;
 	else
 		cout << "9 não está na lista" << endl;
-	
+
 	e0.setValor(0);
 	if(lista.estaNaLista(e0))
 		cout << "0 está na lista" << endl;
 	else
 		cout << "0 não está na lista" << endl;
-	
+
+
 	////////////////////////////////////////////////
 	//
 	// 6. classe lista_avancada
@@ -298,6 +299,26 @@ int main()
     cout << "imprimindo tudo de Header para direita. Deve ser ordem crescente:" << endl;
     minhaListaA.printAll();
 
+    //bool ok;
+    cout << "Deletando tudo"<<endl;
+    for(int i=1;i<=11;i++){
+        minhaListaA.retirar(minhaListaA.getPtrHeader()->getDir(),ok);
+        if(!ok)
+            cout << "Erro na remocao: " << i << endl;
+    }
+    cout << "há "<<minhaListaA.getTamanhoAtual()<< " elementos."<<endl;
+
+    cout << "inserindo pares a direita e impares a esquerda" <<endl;
+    for(int i=0;i<10;i+=2){
+        ele = i;
+        if(!minhaListaA.insereADireita(ele,*(minhaListaA.getPtrHeader())))
+            cout << "Erro na insercao de " << ele << endl;
+        ele = i+1;
+        if(!minhaListaA.insereAEsquerda(ele,*(minhaListaA.getPtrHeader())))
+            cout << "Erro na insercao de " << ele << endl;
+    }
+    cout << "há "<<minhaListaA.getTamanhoAtual()<< " elementos."<<endl;
+    minhaListaA.printAll();
 	////////////////////////////////////////////////
 	//
 	// 7. classe arvore
